@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="@dimen/activity_vertical_margin"
@@ -13,8 +13,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp"
+        android:text="@string/greeting"/>
 
     <View
         android:id="@+id/divider1"
@@ -24,25 +24,26 @@
         android:background="@color/grey_black_1000"/>
 
 
-    <!--<TextView-->
-        <!--android:id="@+id/textViewer"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Large Text"-->
-        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-        <!--android:paddingTop="10dp"-->
-        <!--android:layout_below="@+id/divider1"-->
-        <!--android:layout_alignParentRight="true"/>-->
+    <TextView
+        android:id="@+id/textViewer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/divider1"
+        android:paddingTop="10dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <!-- A CardView that contains a TextView -->
     <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
+        android:id="@+id/cardview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/myrect"
         android:layout_marginTop="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:elevation="2dp"
-        android:background="@drawable/myrect">
+        card_view:cardElevation="8dp"
+        card_view:cardUseCompatPadding="true">
 
         <TextView
             android:id="@+id/textViewer"
@@ -53,6 +54,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"/>
     </android.support.v7.widget.CardView>
 
+
     <Button
         android:id="@+id/btn_Go"
         android:layout_width="wrap_content"
@@ -61,12 +63,5 @@
         android:layout_centerHorizontal="true"
         android:text="@string/btn_GoText"/>
 
-    <!--<ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/list_Meals"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/btn_Go"
-        android:layout_below="@+id/textView" />-->
 
 </RelativeLayout>

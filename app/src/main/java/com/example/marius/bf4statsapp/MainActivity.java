@@ -5,6 +5,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity {
     private Button mButton;
     private ListView mListView;
     private TextView mTextView;
+    CardView mCardView;
     private List<String> meals = new ArrayList<>();
     private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
     //        private final static String urlString = "http://api.bf4stats.com/api/playerRankings?plat=pc&name=chill3rman&opt=stats&output=json";
@@ -43,6 +45,9 @@ public class MainActivity extends Activity {
 
         mButton = (Button) findViewById(R.id.btn_Go);
         mTextView = (TextView) findViewById(R.id.textViewer);
+
+       /* mCardView = (CardView) findViewById(R.id.cardview);
+        mCardView.setElevation(50);*/
 
         mButton.setOnClickListener(new View.OnClickListener() {
 

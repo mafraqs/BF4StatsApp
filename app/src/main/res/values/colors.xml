@@ -289,4 +289,6 @@
     <color name="divider">@color/grey_400</color>
     <color name="action_icons_tint">@color/grey_900</color>
 
+    <color name="cardview_initial_background">#71C3DE</color>
+
 </resources>
