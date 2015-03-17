@@ -79,9 +79,11 @@ public class MainActivity extends Activity {
             super.onPostExecute(json);
 
             try {
-                JSONObject soldier = new JSONObject(json);
-                String text = "Start";
-                mTextView.setText(soldier.toString());
+                JSONObject statObj = new JSONObject(json);
+                JSONObject statSubObj = statObj.getJSONObject("player");
+                String text = statSubObj.getString("name");
+//                mTextView.setText(soldier.toString());
+                mTextView.setText(text);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
