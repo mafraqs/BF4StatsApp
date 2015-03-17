@@ -1,4 +1,4 @@
-package com.example.marius.mensaapp;
+package com.example.marius.bf4statsapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

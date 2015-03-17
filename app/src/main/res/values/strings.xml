@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">MensaApp</string>
+    <string name="app_name">BF4StatsApp</string>
 
-    <string name="hello_world">Ultimative MensaApp 5.000!</string>
-    <string name="action_settings">Settings</string>
+    <string name="hello_world">Ultimative BF4Stats 5.000!</string>
+    <string name="action_settings">Einstellungen</string>
     <string name="btn_GoText">Ab geht\'s</string>
     <string name="action_search">test</string>
+    <string name="search_title">Suche</string>
+    <string name="title_activity_search_soldiers">SearchSoldiersActivity</string>
 </resources>
