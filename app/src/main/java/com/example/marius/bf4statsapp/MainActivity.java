@@ -34,7 +34,8 @@ public class MainActivity extends Activity {
     private TextView mTextView;
     CardView mCardView;
     private List<String> meals = new ArrayList<>();
-    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
+    //    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
+    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&opt=details,stats,extra&output=json";
     //        private final static String urlString = "http://api.bf4stats.com/api/playerRankings?plat=pc&name=chill3rman&opt=stats&output=json";
     private ArrayAdapter<String> adapter;
 
@@ -83,11 +84,40 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String json) {
             super.onPostExecute(json);
 
+            String sPlayerName, sPlayerTag; // Name and Clantag: player->name/tag
+            String sPlayerScore, sTimePlayed; // Score and time played: player->score/timePlayed
+            String sRankNr, sRankName; //Rank number and name: rank->nr/name
+
+            // Skill, Kills, Deaths: stats->skill/kills/headshots/deaths/killStreakBonus
+            String sStatsSkill, sStatsKills, sStatsHeadshots, sStatsDeaths, sStatsKillStreak;
+
+            // KillDeath, WinLose, ScorePerMinute, KillPerMinute: extra->/kdr/wlr/spm/kpm
+            String sExtraKDR, sExtraWLR, sExtraSPM, sExtraKPM;
+
+
             try {
-                JSONObject statObj = new JSONObject(json);
-                JSONObject statSubObj = statObj.getJSONObject("player");
-                String text = statSubObj.getString("name");
-//                mTextView.setText(soldier.toString());
+                JSONObject statObjMain = new JSONObject(json); // gesamtes JSON-Objekt
+                JSONObject statObjOne;      // JSON-Objekt 1. Ebene
+                JSONObject statObjTwo;      // JSON-Objekt 2. Ebene
+                JSONObject statObjThree;    // JSON-Objekt 3. Ebene
+                statObjOne = statObjMain.getJSONObject("player");
+
+                String text = statObjOne.getString("name");
+                text += statObjOne.getString("tag");
+                text += statObjOne.getString("score");
+                text += statObjOne.getString("timePlayed");
+
+                statObjTwo = statObjOne.getJSONObject("rank");
+                text += statObjTwo.getString("nr");
+                text += statObjTwo.getString("name");
+
+                statObjOne = statObjMain.getJSONObject("stats");
+                text += statObjOne.getString("skill");
+                text += statObjOne.getString("kills");
+                text += statObjOne.getString("headshots");
+                text += statObjOne.getString("deaths");
+                text += statObjOne.getString("killStreakBonus");
+
                 mTextView.setText(text);
             } catch (JSONException e) {
                 e.printStackTrace();
