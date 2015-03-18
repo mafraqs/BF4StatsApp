@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mButton = (Button) findViewById(R.id.btn_Go);
-        mTextView = (TextView) findViewById(R.id.textViewer);
+        mTextView = (TextView) findViewById(R.id.tvPlayerName);
 
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
