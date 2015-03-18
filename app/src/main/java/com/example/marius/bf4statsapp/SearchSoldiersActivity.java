@@ -1,11 +1,13 @@
 package com.example.marius.bf4statsapp;
 
 import android.app.Activity;
+import android.app.Application;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.marius.bf4statsapp.R;
 
@@ -31,7 +33,11 @@ public class SearchSoldiersActivity extends Activity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             //use the query to search your data somehow
+            Toast.makeText(getApplicationContext(),query,Toast.LENGTH_LONG).show();
+
         }
+        System.out.println("fegtrgefksj frhjgfhjdseökgbfthu");
+        Toast.makeText(super.getBaseContext(),"TESGJBECF;",Toast.LENGTH_LONG).show();
     }
 
 
