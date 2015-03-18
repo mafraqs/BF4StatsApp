@@ -27,10 +27,10 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cvPlayerInfo"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/myrect"
-        card_view:cardElevation="8dp"
+        card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -39,7 +39,8 @@
             android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingLeft="@dimen/margin_small"
-            android:paddingTop="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small"
             tools:context=".LinearLayout">
 
             <LinearLayout
@@ -48,19 +49,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerName" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblName" />
 
                 <TextView
-                    android:id="@+id/tvPlayerName"
+                    android:id="@+id/tvName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayUser" />
+                    android:text="DisplayName" />
 
             </LinearLayout>
 
@@ -70,14 +70,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerTag"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerTag" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblTag" />
 
                 <TextView
+                    android:id="@+id/tvTag"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
@@ -91,33 +91,95 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerScore"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerScore" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblScore" />
+
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayScore" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayScore" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblRankNr" />
+
+                <TextView
+                    android:id="@+id/tvRankNr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayRankNr" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblRankName" />
+
+                <TextView
+                    android:id="@+id/tvRank"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayRank" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblTime" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayTime" />
 
             </LinearLayout>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
 
-
     <!-- A CardView that contains a TextView -->
     <android.support.v7.widget.CardView
         android:id="@+id/cvPlayerStats"
-        android:layout_below="@id/cvPlayerInfo"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvPlayerInfo"
         android:background="@drawable/myrect"
-        card_view:cardElevation="8dp"
+        card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -126,7 +188,7 @@
             android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingLeft="@dimen/margin_small"
-            android:paddingTop="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_small"
             tools:context=".LinearLayout">
 
             <LinearLayout
@@ -135,19 +197,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerName" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblSkill" />
 
                 <TextView
-                    android:id="@+id/tvPlayerName"
+                    android:id="@+id/tvSkill"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayUser" />
+                    android:text="DisplaySkill" />
 
             </LinearLayout>
 
@@ -157,18 +218,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerTag"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerTag" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblKills" />
 
                 <TextView
+                    android:id="@+id/tvKills"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayClan" />
+                    android:text="DisplayKills" />
 
             </LinearLayout>
 
@@ -178,20 +239,63 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerScore"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerScore" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblHeadshots" />
+
+                <TextView
+                    android:id="@+id/tvHeadshots"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayHeadshots" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayScore" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblDeaths" />
+
+                <TextView
+                    android:id="@+id/tvDeaths"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayDeaths" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblKillStreak" />
+
+                <TextView
+                    android:id="@+id/tvKillStreak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayKillStreak" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
@@ -199,11 +303,11 @@
     <!-- A CardView that contains a TextView -->
     <android.support.v7.widget.CardView
         android:id="@+id/cvPlayerMiscellaneous"
-        android:layout_below="@id/cvPlayerStats"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvPlayerStats"
         android:background="@drawable/myrect"
-        card_view:cardElevation="8dp"
+        card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -212,7 +316,7 @@
             android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingLeft="@dimen/margin_small"
-            android:paddingTop="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_small"
             tools:context=".LinearLayout">
 
             <LinearLayout
@@ -221,19 +325,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerName" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblKDR" />
 
                 <TextView
-                    android:id="@+id/tvPlayerName"
+                    android:id="@+id/tvKDR"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayUser" />
+                    android:text="DisplayK/D" />
 
             </LinearLayout>
 
@@ -243,18 +346,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerTag"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerTag" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblWLR" />
 
                 <TextView
+                    android:id="@+id/tvWLR"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayClan" />
+                    android:text="DisplayW/L" />
 
             </LinearLayout>
 
@@ -264,23 +367,47 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/lblPlayerScore"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:paddingLeft="15px"
-                    android:text="@string/lblPlayerScore" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblSPM" />
+
+                <TextView
+                    android:id="@+id/tvSPM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplaySPM" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:text="DisplayScore" />
+                    android:paddingLeft="@dimen/margin_small"
+                    android:text="@string/lblKPM" />
+
+                <TextView
+                    android:id="@+id/tvKPM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="DisplayKPM" />
 
             </LinearLayout>
+
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
+
     <Button
         android:id="@+id/btn_Go"
         android:layout_width="wrap_content"

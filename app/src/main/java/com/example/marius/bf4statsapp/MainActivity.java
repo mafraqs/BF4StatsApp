@@ -31,8 +31,29 @@ public class MainActivity extends Activity {
 
     private Button mButton;
     private ListView mListView;
-    private TextView mTextView;
+
+
+    // Variable for Material CardView
     CardView mCardView;
+
+    // Variables for Soldier-Info (mTV = mTextView)
+    private TextView mTV_Name;
+    private TextView mTV_Tag;
+    private TextView mTV_Score;
+    private TextView mTV_TimePlayed;
+    private TextView mTV_RankNr;
+    private TextView mTV_RankName;
+    private TextView mTV_Skill;
+    private TextView mTV_Kills;
+    private TextView mTV_Headshots;
+    private TextView mTV_Deaths;
+    private TextView mTV_KillStreak;
+    private TextView mTV_KDR;
+    private TextView mTV_WLR;
+    private TextView mTV_SPM;
+    private TextView mTV_KPM;
+
+
     private List<String> meals = new ArrayList<>();
     //    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
     private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&opt=details,stats,extra&output=json";
@@ -45,7 +66,24 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mButton = (Button) findViewById(R.id.btn_Go);
-        mTextView = (TextView) findViewById(R.id.tvPlayerName);
+
+
+        mTV_Name = (TextView) findViewById(R.id.tvName);
+        mTV_Tag = (TextView) findViewById(R.id.tvTag);
+        mTV_Score = (TextView) findViewById(R.id.tvScore);
+        mTV_TimePlayed = (TextView) findViewById(R.id.tvTime);
+        mTV_RankNr = (TextView) findViewById(R.id.tvRankNr);
+        mTV_RankName = (TextView) findViewById(R.id.tvRank);
+        mTV_Skill = (TextView) findViewById(R.id.tvSkill);
+        mTV_Kills = (TextView) findViewById(R.id.tvKills);
+        mTV_Headshots = (TextView) findViewById(R.id.tvHeadshots);
+        mTV_Deaths = (TextView) findViewById(R.id.tvDeaths);
+        mTV_KillStreak = (TextView) findViewById(R.id.tvKillStreak);
+        mTV_KDR = (TextView) findViewById(R.id.tvKDR);
+        mTV_WLR = (TextView) findViewById(R.id.tvWLR);
+        mTV_SPM = (TextView) findViewById(R.id.tvSPM);
+        mTV_KPM = (TextView) findViewById(R.id.tvKPM);
+
 
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
@@ -118,7 +156,29 @@ public class MainActivity extends Activity {
                 sStatsDeaths = statObjOne.getString("deaths");
                 sStatsKillStreak = statObjOne.getString("killStreakBonus");
 
-                mTextView.setText(sPlayerName);
+                statObjTwo = statObjOne.getJSONObject("extra");
+                sExtraKDR = statObjTwo.getString("kdr").substring(0, 4);
+                sExtraWLR = statObjTwo.getString("wlr").substring(0, 4);
+                sExtraSPM = statObjTwo.getString("spm").substring(0, 4);
+                sExtraKPM = statObjTwo.getString("kpm").substring(0, 4);
+
+
+
+                mTV_Name.setText(sPlayerName);
+                mTV_Tag.setText(sPlayerTag);
+                mTV_Score.setText(sPlayerScore);
+                mTV_TimePlayed.setText(sTimePlayed);
+                mTV_RankNr.setText(sRankNr);
+                mTV_RankName.setText(sRankName);
+                mTV_Skill.setText(sStatsSkill);
+                mTV_Kills.setText(sStatsKills);
+                mTV_Headshots.setText(sStatsHeadshots);
+                mTV_Deaths.setText(sStatsDeaths);
+                mTV_KillStreak.setText(sStatsKillStreak);
+                mTV_KDR.setText(sExtraKDR);
+                mTV_WLR.setText(sExtraWLR);
+                mTV_SPM.setText(sExtraSPM);
+                mTV_KPM.setText(sExtraKPM);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -7,7 +7,22 @@
     <string name="action_search">test</string>
     <string name="search_title">Suche</string>
     <string name="title_activity_search_soldiers">SearchSoldiersActivity</string>
-    <string name="lblPlayerName">Player Name:</string>
-    <string name="lblPlayerTag">Clan:</string>
-    <string name="lblPlayerScore">Score:</string>
+
+
+    <string name="lblName">Player Name:</string>
+    <string name="lblTag">Clan:</string>
+    <string name="lblScore">Score:</string>
+    <string name="lblRankNr">Rank:</string>
+    <string name="lblRankName">Rank:</string>
+    <string name="lblSkill">Skill:</string>
+    <string name="lblKills">Kills:</string>
+    <string name="lblHeadshots">Headshots:</string>
+    <string name="lblDeaths">Deaths:</string>
+    <string name="lblKillStreak">KillStreak:</string>
+    <string name="lblKDR">K/D:</string>
+    <string name="lblWLR">W/L:</string>
+    <string name="lblSPM">SPM:</string>
+    <string name="lblKPM">KPM:</string>
+    <string name="lblTime">Time Played:</string>
+
 </resources>
