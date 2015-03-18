@@ -84,8 +84,8 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String json) {
             super.onPostExecute(json);
 
-            String sPlayerName, sPlayerTag; // Name and Clantag: player->name/tag
-            String sPlayerScore, sTimePlayed; // Score and time played: player->score/timePlayed
+            // Name and Clantag: player->name/tag  // Score and time played: player->score/timePlayed
+            String sPlayerName, sPlayerTag, sPlayerScore, sTimePlayed;
             String sRankNr, sRankName; //Rank number and name: rank->nr/name
 
             // Skill, Kills, Deaths: stats->skill/kills/headshots/deaths/killStreakBonus
@@ -102,23 +102,23 @@ public class MainActivity extends Activity {
                 JSONObject statObjThree;    // JSON-Objekt 3. Ebene
                 statObjOne = statObjMain.getJSONObject("player");
 
-                String text = statObjOne.getString("name");
-                text += statObjOne.getString("tag");
-                text += statObjOne.getString("score");
-                text += statObjOne.getString("timePlayed");
+                sPlayerName = statObjOne.getString("name");
+                sPlayerTag = statObjOne.getString("tag");
+                sPlayerScore = statObjOne.getString("score");
+                sTimePlayed = statObjOne.getString("timePlayed");
 
                 statObjTwo = statObjOne.getJSONObject("rank");
-                text += statObjTwo.getString("nr");
-                text += statObjTwo.getString("name");
+                sRankNr = statObjTwo.getString("nr");
+                sRankName = statObjTwo.getString("name");
 
                 statObjOne = statObjMain.getJSONObject("stats");
-                text += statObjOne.getString("skill");
-                text += statObjOne.getString("kills");
-                text += statObjOne.getString("headshots");
-                text += statObjOne.getString("deaths");
-                text += statObjOne.getString("killStreakBonus");
+                sStatsSkill = statObjOne.getString("skill");
+                sStatsKills = statObjOne.getString("kills");
+                sStatsHeadshots = statObjOne.getString("headshots");
+                sStatsDeaths = statObjOne.getString("deaths");
+                sStatsKillStreak = statObjOne.getString("killStreakBonus");
 
-                mTextView.setText(text);
+                mTextView.setText(sPlayerName);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

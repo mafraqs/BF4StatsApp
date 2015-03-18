@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BF4StatsApp</string>
+    <string name="app_name">BF4Stats</string>
 
     <string name="greeting">Ultimative BF4Stats 5.000!</string>
     <string name="action_settings">Einstellungen</string>
