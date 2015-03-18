@@ -88,15 +88,13 @@ public class MainActivity extends Activity {
 
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
-/*
-        mButton.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                new JsonFetcher().execute();
-            }
-        });*/
         handleIntent(getIntent());
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, ComparisonActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -130,9 +128,9 @@ public class MainActivity extends Activity {
                     json += inputLine;
                 }
             } catch (MalformedURLException e) {
-                //e.printStackTrace();
+                e.printStackTrace();
             } catch (IOException e) {
-                //System.out.print("Player not found!");
+                e.printStackTrace();
             }
             return json;
 
@@ -143,7 +141,7 @@ public class MainActivity extends Activity {
             super.onPostExecute(json);
 
             if (json.equals("")) {
-                Toast.makeText(getApplicationContext(),"Keine Daten gefunden du Opfaaah!",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Keine Daten gefunden!",Toast.LENGTH_LONG).show();
                 return;
             }
 
@@ -187,8 +185,6 @@ public class MainActivity extends Activity {
                 sExtraSPM = statObjTwo.getString("spm").substring(0, 4);
                 sExtraKPM = statObjTwo.getString("kpm").substring(0, 4);
 
-
-
                 mTV_Name.setText(sPlayerName);
                 mTV_Tag.setText(sPlayerTag);
                 mTV_Score.setText(sPlayerScore);
@@ -220,7 +216,6 @@ public class MainActivity extends Activity {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
         return true;
     }
 

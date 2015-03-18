@@ -3,7 +3,7 @@
 
     <string name="greeting">Ultimative BF4Stats 5.000!</string>
     <string name="action_settings">Einstellungen</string>
-    <string name="btn_GoText">Ab geht\'s</string>
+    <string name="btn_GoText">Vergleichen!</string>
     <string name="action_search">test</string>
     <string name="search_title">Suche</string>
     <string name="title_activity_search_soldiers">SearchSoldiersActivity</string>
@@ -24,5 +24,9 @@
     <string name="lblSPM">SPM:</string>
     <string name="lblKPM">KPM:</string>
     <string name="lblTime">Time Played:</string>
+    <string name="title_activity_comparison">ComparisonActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_compare">Vergleich</string>
 
 </resources>

@@ -1,0 +1,527 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.marius.bf4statsapp.ComparisonActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="500dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/linearLayout">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:weightSum="1"
+                android:baselineAligned="false"
+                android:background="#ffdddddd">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPlayer1"
+                    android:layout_weight="0.35"
+                    android:inputType="text"
+                    android:editable="true"
+                    android:enabled="true"
+                    android:text="blameyone"
+                    android:autoText="false" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText2"
+                    android:autoText="false"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:enabled="false"
+                    android:inputType="none"
+                    android:text="vs."
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPlayer2"
+                    android:layout_weight="0.35"
+                    android:inputType="text"
+                    android:editable="true"
+                    android:enabled="true"
+                    android:text="chill3rman" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Go!"
+                    android:id="@+id/GoButton"
+                    android:layout_weight="0.25"
+                    android:onClick="comparePlayers" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="20px" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="421dp"
+                android:id="@+id/scrollView"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentTop="true">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:minWidth="0dp"
+                        android:layout_weight="0.89">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Player Name"
+                            android:id="@+id/textView2"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Clan"
+                            android:id="@+id/textView3"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Score"
+                            android:id="@+id/textView4"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal"  />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Rank Nr."
+                            android:id="@+id/textView5"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Rank"
+                            android:id="@+id/textView6"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Time Played"
+                            android:id="@+id/textView7"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Skill"
+                            android:id="@+id/textView9"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Kills"
+                            android:id="@+id/textView11"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Headshots"
+                            android:id="@+id/textView8"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Deaths"
+                            android:id="@+id/textView12"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Killstreak"
+                            android:id="@+id/textView13"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="K/D"
+                            android:id="@+id/textView14"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="W/L"
+                            android:id="@+id/textView10"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="SPM"
+                            android:id="@+id/textView15"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="KPM"
+                            android:id="@+id/textView16"
+                            android:textAlignment="center"
+                            android:textColor="#ff010101"
+                            android:gravity="center_horizontal" />
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="username1"
+                            android:id="@+id/tvPl1Name"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="clan1"
+                            android:id="@+id/tvPl1Clan"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="score1"
+                            android:id="@+id/tvPl1Score"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="rankNr1"
+                            android:id="@+id/tvPl1RankNr"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="rank1"
+                            android:id="@+id/tvPl1Rank"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="time1"
+                            android:id="@+id/tvPl1Time"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="skill1"
+                            android:id="@+id/tvPl1Skill"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="kills1"
+                            android:id="@+id/tvPl1Kills"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="heads1"
+                            android:id="@+id/tvPl1Heads"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="deaths1"
+                            android:id="@+id/tvPl1Deaths"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="streak1"
+                            android:id="@+id/tvPl1Streak"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="K/D1"
+                            android:id="@+id/tvPl1KD"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="W/L1"
+                            android:id="@+id/tvPl1WL"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="SPM1"
+                            android:id="@+id/tvPl1SPM"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="KPM1"
+                            android:id="@+id/tvPl1KPM"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="username2"
+                            android:id="@+id/tvPl2Name"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="clan2"
+                            android:id="@+id/tvPl2Clan"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="score2"
+                            android:id="@+id/tvPl2Score"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="rankNr2"
+                            android:id="@+id/tvPl2RankNr"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="rank2"
+                            android:id="@+id/tvPl2Rank"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="time2"
+                            android:id="@+id/tvPl2Time"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="skill2"
+                            android:id="@+id/tvPl2Skill"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="kills2"
+                            android:id="@+id/tvPl2Kills"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="heads2"
+                            android:id="@+id/tvPl2Heads"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="deaths2"
+                            android:id="@+id/tvPl2Deaths"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="streak2"
+                            android:id="@+id/tvPl2Streak"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="K/D2"
+                            android:id="@+id/tvPl2KD"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="W/L2"
+                            android:id="@+id/tvPl2WL"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="SPM2"
+                            android:id="@+id/tvPl2SPM"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="KPM2"
+                            android:id="@+id/tvPl2KPM"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/margin_medium"
+                            android:gravity="center_horizontal" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
