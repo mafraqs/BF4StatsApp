@@ -3,6 +3,7 @@ package com.example.marius.bf4statsapp;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -56,7 +58,7 @@ public class MainActivity extends Activity {
 
     private List<String> meals = new ArrayList<>();
     //    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
-    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&opt=details,stats,extra&output=json";
+    private static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&opt=details,stats,extra&output=json";
     //        private final static String urlString = "http://api.bf4stats.com/api/playerRankings?plat=pc&name=chill3rman&opt=stats&output=json";
     private ArrayAdapter<String> adapter;
 
@@ -65,7 +67,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mButton = (Button) findViewById(R.id.btn_Go);
+        //mButton = (Button) findViewById(R.id.btn_Go);
 
 
         mTV_Name = (TextView) findViewById(R.id.tvName);
@@ -84,17 +86,34 @@ public class MainActivity extends Activity {
         mTV_SPM = (TextView) findViewById(R.id.tvSPM);
         mTV_KPM = (TextView) findViewById(R.id.tvKPM);
 
-
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
-
+/*
         mButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 new JsonFetcher().execute();
             }
-        });
+        });*/
+        handleIntent(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+    }
+
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //use the query to search your data somehow
+            urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=" + query + "&opt=details,stats,extra&output=json";
+            new JsonFetcher().execute();
+        }
+
     }
 
     public class JsonFetcher extends AsyncTask<Void, Void, String> {
@@ -111,16 +130,22 @@ public class MainActivity extends Activity {
                     json += inputLine;
                 }
             } catch (MalformedURLException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             } catch (IOException e) {
-                e.printStackTrace();
+                //System.out.print("Player not found!");
             }
             return json;
+
         }
 
         @Override
         protected void onPostExecute(String json) {
             super.onPostExecute(json);
+
+            if (json.equals("")) {
+                Toast.makeText(getApplicationContext(),"Keine Daten gefunden du Opfaaah!",Toast.LENGTH_LONG).show();
+                return;
+            }
 
             // Name and Clantag: player->name/tag  // Score and time played: player->score/timePlayed
             String sPlayerName, sPlayerTag, sPlayerScore, sTimePlayed;
