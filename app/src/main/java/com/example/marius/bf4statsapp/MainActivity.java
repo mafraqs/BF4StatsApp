@@ -146,7 +146,6 @@ public class MainActivity extends Activity {
             urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=" + query + "&opt=details,stats,extra&output=json";
             spinner.setVisibility(View.VISIBLE);
             new JsonFetcher().execute();
-            spinner.setVisibility(View.GONE);
         }
 
     }
@@ -304,6 +303,8 @@ public class MainActivity extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            spinner.setVisibility(View.GONE);
 
         }
     }
