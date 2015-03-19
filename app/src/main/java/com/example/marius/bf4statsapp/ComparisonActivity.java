@@ -295,22 +295,39 @@ public class ComparisonActivity extends Activity {
                 // Round SPM 2 digits after the dot
                 sExtraKDR = statObjTwo.getString("kdr");
                 String [] sArrayKDR = sExtraKDR.split("\\.");
-                sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
+                if (sArrayKDR.length == 2) {
+                    sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
+                } else {
+                    sExtraKDR = sArrayKDR[0] + ".00";
+                }
 
                 // Round SPM 2 digits after the dot
                 sExtraWLR = statObjTwo.getString("wlr");
                 String [] sArrayWLR = sExtraWLR.split("\\.");
-                sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0,2);
+                if (sArrayWLR.length == 2) {
+                    sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0,2);
+                } else {
+                    sExtraWLR = sArrayWLR[0] + ".00";
+                }
+
 
                 // Round SPM 2 digits after the dot
                 sExtraSPM = statObjTwo.getString("spm");
                 String [] sArraySPM = sExtraSPM.split("\\.");
-                sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0,2);
+                if (sArraySPM.length == 2) {
+                    sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0,2);
+                } else {
+                    sExtraSPM = sArraySPM[0] + ".00";
+                }
 
                 // Round SPM 2 digits after the dot
                 sExtraKPM = statObjTwo.getString("kpm");
                 String [] sArrayKPM = sExtraKPM.split("\\.");
-                sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
+                if (sArrayKPM.length == 2) {
+                    sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
+                } else {
+                    sExtraKPM = sArrayKPM[0] + ".00";
+                }
 
                 mTV_Name2.setText(sPlayerName);
                 mTV_Tag2.setText(sPlayerTag);
