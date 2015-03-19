@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,6 +62,7 @@ public class MainActivity extends Activity {
     private TextView mTV_SPM;
     private TextView mTV_KPM;
 
+    private ProgressBar spinner;
 
     private List<String> meals = new ArrayList<>();
     //    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
@@ -94,6 +96,9 @@ public class MainActivity extends Activity {
 
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
+
+        spinner = (ProgressBar)findViewById(R.id.progressBarM);
+        spinner.setVisibility(View.GONE);
 
         handleIntent(getIntent());
     }
@@ -146,6 +151,7 @@ public class MainActivity extends Activity {
 
         @Override
         protected String doInBackground(Void... params) {
+            spinner.setVisibility(View.VISIBLE);
             String json = "";
             String inputLine = "";
 
@@ -243,6 +249,7 @@ public class MainActivity extends Activity {
                 mTV_WLR.setText(sExtraWLR);
                 mTV_SPM.setText(sExtraSPM);
                 mTV_KPM.setText(sExtraKPM);
+                spinner.setVisibility(View.GONE);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
