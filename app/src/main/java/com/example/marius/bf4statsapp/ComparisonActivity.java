@@ -378,14 +378,14 @@ public class ComparisonActivity extends Activity {
                 if (score1 > score2)  {
                     mTV_Score1.setTextColor(Color.parseColor("#FF0AFF41"));
                     mTV_Score2.setTextColor(Color.parseColor("#FFFF1501"));
-                    mIV_Player2.setBackground(getDrawable(R.drawable.sieg));
-                    mIV_Player1.setBackground(getDrawable(R.drawable.lose));
+                    mIV_Player2.setBackground(getResources().getDrawable(R.drawable.sieg));
+                    mIV_Player1.setBackground(getResources().getDrawable(R.drawable.lose));
                 };
                 if (score1 < score2)  {
                     mTV_Score2.setTextColor(Color.parseColor("#FF0AFF41"));
                     mTV_Score1.setTextColor(Color.parseColor("#FFFF1501"));
-                    mIV_Player1.setBackground(getDrawable(R.drawable.sieg));
-                    mIV_Player2.setBackground(getDrawable(R.drawable.lose));
+                    mIV_Player1.setBackground(getResources().getDrawable(R.drawable.sieg));
+                    mIV_Player2.setBackground(getResources().getDrawable(R.drawable.lose));
                 };
                 if (score1 == score2)  {mTV_Score1.setTextColor(Color.parseColor("#6F000000"));mTV_Score2.setTextColor(Color.parseColor("#6F000000"));};
 
