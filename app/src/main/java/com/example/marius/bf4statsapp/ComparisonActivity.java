@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONException;
@@ -57,6 +58,8 @@ public class ComparisonActivity extends Activity {
     private TextView mTV_Player1Name;
     private TextView mTV_Player2Name;
 
+    private ProgressBar spinner;
+
     private static String urlPlayer1String = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&opt=details,stats,extra&output=json";
     private static String urlPlayer2String = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=blameyone&opt=details,stats,extra&output=json";
 
@@ -99,10 +102,13 @@ public class ComparisonActivity extends Activity {
 
         mTV_Player1Name = (TextView) findViewById(R.id.tvPlayer1);
         mTV_Player2Name = (TextView) findViewById(R.id.tvPlayer2);
+
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
     }
 
     public void comparePlayers(View view) {
-
+        spinner.setVisibility(View.VISIBLE);
         String tempName1 = mTV_Player1Name.getText().toString();
         urlPlayer1String = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=" + tempName1 + "&opt=details,stats,extra&output=json";
         String tempName2 = mTV_Player2Name.getText().toString();
@@ -322,6 +328,10 @@ public class ComparisonActivity extends Activity {
                 mTV_SPM2.setText(sExtraSPM);
                 mTV_KPM2.setText(sExtraKPM);
 
+<<<<<<< HEAD
+=======
+                spinner.setVisibility(View.GONE);
+>>>>>>> e871eaa8f8ad7e20b4d7c8ea89e1fd800f5c17d5
             } catch (JSONException e) {
                 e.printStackTrace();
             }

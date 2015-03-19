@@ -72,6 +72,17 @@
                 android:layout_width="fill_parent"
                 android:layout_height="20px" />
 
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" />
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="20px" />
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="421dp"
@@ -520,6 +531,7 @@
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
+
         </LinearLayout>
 
     </LinearLayout>
