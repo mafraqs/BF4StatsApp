@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 public class ComparisonActivity extends Activity {
 
@@ -177,10 +178,25 @@ public class ComparisonActivity extends Activity {
                 sStatsKillStreak = statObjOne.getString("killStreakBonus");
 
                 statObjTwo = statObjOne.getJSONObject("extra");
-                sExtraKDR = statObjTwo.getString("kdr").substring(0, 4);
-                sExtraWLR = statObjTwo.getString("wlr").substring(0, 4);
-                sExtraSPM = statObjTwo.getString("spm").substring(0, 4);
-                sExtraKPM = statObjTwo.getString("kpm").substring(0, 4);
+                // Round SPM 2 digits after the dot
+                sExtraKDR = statObjTwo.getString("kdr");
+                String [] sArrayKDR = sExtraKDR.split("\\.");
+                sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraWLR = statObjTwo.getString("wlr");
+                String [] sArrayWLR = sExtraWLR.split("\\.");
+                sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraSPM = statObjTwo.getString("spm");
+                String [] sArraySPM = sExtraSPM.split("\\.");
+                sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraKPM = statObjTwo.getString("kpm");
+                String [] sArrayKPM = sExtraKPM.split("\\.");
+                sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
 
                 mTV_Name1.setText(sPlayerName);
                 mTV_Tag1.setText(sPlayerTag);
@@ -197,6 +213,7 @@ public class ComparisonActivity extends Activity {
                 mTV_WLR1.setText(sExtraWLR);
                 mTV_SPM1.setText(sExtraSPM);
                 mTV_KPM1.setText(sExtraKPM);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -269,10 +286,25 @@ public class ComparisonActivity extends Activity {
                 sStatsKillStreak = statObjOne.getString("killStreakBonus");
 
                 statObjTwo = statObjOne.getJSONObject("extra");
-                sExtraKDR = statObjTwo.getString("kdr").substring(0, 4);
-                sExtraWLR = statObjTwo.getString("wlr").substring(0, 4);
-                sExtraSPM = statObjTwo.getString("spm").substring(0, 4);
-                sExtraKPM = statObjTwo.getString("kpm").substring(0, 4);
+                // Round SPM 2 digits after the dot
+                sExtraKDR = statObjTwo.getString("kdr");
+                String [] sArrayKDR = sExtraKDR.split("\\.");
+                sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraWLR = statObjTwo.getString("wlr");
+                String [] sArrayWLR = sExtraWLR.split("\\.");
+                sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraSPM = statObjTwo.getString("spm");
+                String [] sArraySPM = sExtraSPM.split("\\.");
+                sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraKPM = statObjTwo.getString("kpm");
+                String [] sArrayKPM = sExtraKPM.split("\\.");
+                sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
 
                 mTV_Name2.setText(sPlayerName);
                 mTV_Tag2.setText(sPlayerTag);
@@ -289,6 +321,7 @@ public class ComparisonActivity extends Activity {
                 mTV_WLR2.setText(sExtraWLR);
                 mTV_SPM2.setText(sExtraSPM);
                 mTV_KPM2.setText(sExtraKPM);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

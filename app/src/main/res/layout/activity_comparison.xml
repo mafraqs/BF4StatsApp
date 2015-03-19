@@ -62,9 +62,9 @@
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Go!"
+                    android:text="@string/btn_Go"
                     android:id="@+id/GoButton"
-                    android:layout_weight="0.25"
+                    android:layout_weight="0.2"
                     android:onClick="comparePlayers" />
             </LinearLayout>
 

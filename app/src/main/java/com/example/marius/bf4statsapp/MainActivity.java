@@ -180,10 +180,25 @@ public class MainActivity extends Activity {
                 sStatsKillStreak = statObjOne.getString("killStreakBonus");
 
                 statObjTwo = statObjOne.getJSONObject("extra");
-                sExtraKDR = statObjTwo.getString("kdr").substring(0, 4);
-                sExtraWLR = statObjTwo.getString("wlr").substring(0, 4);
-                sExtraSPM = statObjTwo.getString("spm").substring(0, 4);
-                sExtraKPM = statObjTwo.getString("kpm").substring(0, 4);
+                // Round SPM 2 digits after the dot
+                sExtraKDR = statObjTwo.getString("kdr");
+                String [] sArrayKDR = sExtraKDR.split("\\.");
+                sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraWLR = statObjTwo.getString("wlr");
+                String [] sArrayWLR = sExtraWLR.split("\\.");
+                sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraSPM = statObjTwo.getString("spm");
+                String [] sArraySPM = sExtraSPM.split("\\.");
+                sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0,2);
+
+                // Round SPM 2 digits after the dot
+                sExtraKPM = statObjTwo.getString("kpm");
+                String [] sArrayKPM = sExtraKPM.split("\\.");
+                sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
 
                 mTV_Name.setText(sPlayerName);
                 mTV_Tag.setText(sPlayerTag);

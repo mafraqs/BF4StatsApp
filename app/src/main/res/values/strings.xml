@@ -28,5 +28,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_compare">Vergleich</string>
+    <string name="btn_Go">Go!</string>
 
 </resources>
