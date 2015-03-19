@@ -403,104 +403,105 @@ public class ComparisonActivity extends Activity {
                 int score2 = Integer.parseInt(mTV_Score2.getText().toString());
 
                 if (score1 > score2)  {
-                    mTV_Score1.setTextColor(Color.parseColor("#FF0AFF41"));
-                    mTV_Score2.setTextColor(Color.parseColor("#FFFF1501"));
-                    mIV_Player2.setBackground(getResources().getDrawable(R.drawable.sieg));
-                    mIV_Player1.setBackground(getResources().getDrawable(R.drawable.lose));
+                    mTV_Score1.setTextColor(Color.parseColor("#259b24"));
+                    mTV_Score2.setTextColor(Color.parseColor("#d01716"));
+
+                    mIV_Player2.setImageResource(R.drawable.win);
+                    mIV_Player1.setImageResource(R.drawable.lose);
                 };
                 if (score1 < score2)  {
-                    mTV_Score2.setTextColor(Color.parseColor("#FF0AFF41"));
-                    mTV_Score1.setTextColor(Color.parseColor("#FFFF1501"));
-                    mIV_Player1.setBackground(getResources().getDrawable(R.drawable.sieg));
-                    mIV_Player2.setBackground(getResources().getDrawable(R.drawable.lose));
+                    mTV_Score2.setTextColor(Color.parseColor("#259b24"));
+                    mTV_Score1.setTextColor(Color.parseColor("#d01716"));
+                    mIV_Player1.setImageResource(R.drawable.win);
+                    mIV_Player2.setImageResource(R.drawable.lose);
                 };
                 if (score1 == score2)  {mTV_Score1.setTextColor(Color.parseColor("#6F000000"));mTV_Score2.setTextColor(Color.parseColor("#6F000000"));};
 
                 int time1 = Integer.parseInt(mTV_TimePlayed1.getText().toString());
                 int time2 = Integer.parseInt(mTV_TimePlayed2.getText().toString());
 
-                if (time1 > time2)  {mTV_TimePlayed1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_TimePlayed2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (time1 < time2)  {mTV_TimePlayed2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_TimePlayed1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (time1 > time2)  {mTV_TimePlayed1.setTextColor(Color.parseColor("#259b24"));mTV_TimePlayed2.setTextColor(Color.parseColor("#d01716"));};
+                if (time1 < time2)  {mTV_TimePlayed2.setTextColor(Color.parseColor("#259b24"));mTV_TimePlayed1.setTextColor(Color.parseColor("#d01716"));};
                 if (time1 == time2)  {mTV_TimePlayed1.setTextColor(Color.parseColor("#6F000000"));mTV_TimePlayed2.setTextColor(Color.parseColor("#6F000000"));};
 
                 int rank1 = Integer.parseInt(mTV_RankNr1.getText().toString());
                 int rank2 = Integer.parseInt(mTV_RankNr2.getText().toString());
 
                 if (rank1 > rank2)  {
-                    mTV_RankNr1.setTextColor(Color.parseColor("#FF0AFF41"));
-                    mTV_RankName1.setTextColor(Color.parseColor("#FF0AFF41"));
-                    mTV_RankNr2.setTextColor(Color.parseColor("#FFFF1501"));
-                    mTV_RankName2.setTextColor(Color.parseColor("#FFFF1501"));
+                    mTV_RankNr1.setTextColor(Color.parseColor("#259b24"));
+                    mTV_RankName1.setTextColor(Color.parseColor("#259b24"));
+                    mTV_RankNr2.setTextColor(Color.parseColor("#d01716"));
+                    mTV_RankName2.setTextColor(Color.parseColor("#d01716"));
                 };
                 if (rank1 < rank2)  {
-                    mTV_RankNr2.setTextColor(Color.parseColor("#FF0AFF41"));
-                    mTV_RankName2.setTextColor(Color.parseColor("#FF0AFF41"));
-                    mTV_RankNr1.setTextColor(Color.parseColor("#FFFF1501"));
-                    mTV_RankName1.setTextColor(Color.parseColor("#FFFF1501"));
+                    mTV_RankNr2.setTextColor(Color.parseColor("#259b24"));
+                    mTV_RankName2.setTextColor(Color.parseColor("#259b24"));
+                    mTV_RankNr1.setTextColor(Color.parseColor("#d01716"));
+                    mTV_RankName1.setTextColor(Color.parseColor("#d01716"));
                 };
                 if (rank1 == rank2)  {mTV_RankNr1.setTextColor(Color.parseColor("#6F000000"));mTV_RankNr2.setTextColor(Color.parseColor("#6F000000"));};
 
                 int skill1 = Integer.parseInt(mTV_Skill1.getText().toString());
                 int skill2 = Integer.parseInt(mTV_Skill2.getText().toString());
 
-                if (skill1 > skill2)  {mTV_Skill1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Skill2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (skill1 < skill2)  {mTV_Skill2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Skill1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (skill1 > skill2)  {mTV_Skill1.setTextColor(Color.parseColor("#259b24"));mTV_Skill2.setTextColor(Color.parseColor("#d01716"));};
+                if (skill1 < skill2)  {mTV_Skill2.setTextColor(Color.parseColor("#259b24"));mTV_Skill1.setTextColor(Color.parseColor("#d01716"));};
                 if (skill1 == skill2)  {mTV_Skill1.setTextColor(Color.parseColor("#6F000000"));mTV_Skill2.setTextColor(Color.parseColor("#6F000000"));};
 
                 int kill1 = Integer.parseInt(mTV_Kills1.getText().toString());
                 int kill2 = Integer.parseInt(mTV_Kills2.getText().toString());
 
-                if (kill1 > kill2)  {mTV_Kills1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Kills2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (kill1 < kill2)  {mTV_Kills2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Kills1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (kill1 > kill2)  {mTV_Kills1.setTextColor(Color.parseColor("#259b24"));mTV_Kills2.setTextColor(Color.parseColor("#d01716"));};
+                if (kill1 < kill2)  {mTV_Kills2.setTextColor(Color.parseColor("#259b24"));mTV_Kills1.setTextColor(Color.parseColor("#d01716"));};
                 if (kill1 == kill2)  {mTV_Kills1.setTextColor(Color.parseColor("#6F000000"));mTV_Kills2.setTextColor(Color.parseColor("#6F000000"));};
 
                 int heads1 = Integer.parseInt(mTV_Headshots1.getText().toString());
                 int heads2 = Integer.parseInt(mTV_Headshots2.getText().toString());
 
-                if (heads1 > heads2)  {mTV_Headshots1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Headshots2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (heads1 < heads2)  {mTV_Headshots2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Headshots1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (heads1 > heads2)  {mTV_Headshots1.setTextColor(Color.parseColor("#259b24"));mTV_Headshots2.setTextColor(Color.parseColor("#d01716"));};
+                if (heads1 < heads2)  {mTV_Headshots2.setTextColor(Color.parseColor("#259b24"));mTV_Headshots1.setTextColor(Color.parseColor("#d01716"));};
                 if (heads1 == heads2)  {mTV_Headshots1.setTextColor(Color.parseColor("#6F000000"));mTV_Headshots2.setTextColor(Color.parseColor("#6F000000"));};
 
                 int deaths1 = Integer.parseInt(mTV_Deaths1.getText().toString());
                 int deaths2 = Integer.parseInt(mTV_Deaths2.getText().toString());
 
-                if (deaths1 < deaths2)  {mTV_Deaths1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Deaths2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (deaths1 > deaths2)  {mTV_Deaths2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_Deaths1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (deaths1 < deaths2)  {mTV_Deaths1.setTextColor(Color.parseColor("#259b24"));mTV_Deaths2.setTextColor(Color.parseColor("#d01716"));};
+                if (deaths1 > deaths2)  {mTV_Deaths2.setTextColor(Color.parseColor("#259b24"));mTV_Deaths1.setTextColor(Color.parseColor("#d01716"));};
                 if (deaths1 == deaths2)  {mTV_Deaths1.setTextColor(Color.parseColor("#6F000000"));mTV_Deaths2.setTextColor(Color.parseColor("#6F000000"));};
 
                 int streak1 = Integer.parseInt(mTV_KillStreak1.getText().toString());
                 int streak2 = Integer.parseInt(mTV_KillStreak2.getText().toString());
 
-                if (streak1 > streak2)  {mTV_KillStreak1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_KillStreak2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (streak1 < streak2)  {mTV_KillStreak2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_KillStreak1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (streak1 > streak2)  {mTV_KillStreak1.setTextColor(Color.parseColor("#259b24"));mTV_KillStreak2.setTextColor(Color.parseColor("#d01716"));};
+                if (streak1 < streak2)  {mTV_KillStreak2.setTextColor(Color.parseColor("#259b24"));mTV_KillStreak1.setTextColor(Color.parseColor("#d01716"));};
                 if (streak1 == streak2)  {mTV_KillStreak1.setTextColor(Color.parseColor("#6F000000"));mTV_KillStreak2.setTextColor(Color.parseColor("#6F000000"));};
 
                 Double kdr1 = Double.parseDouble(mTV_KDR1.getText().toString());
                 Double kdr2 = Double.parseDouble(mTV_KDR2.getText().toString());
 
-                if (kdr1 > kdr2)  {mTV_KDR1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_KDR2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (kdr1 < kdr2)  {mTV_KDR2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_KDR1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (kdr1 > kdr2)  {mTV_KDR1.setTextColor(Color.parseColor("#259b24"));mTV_KDR2.setTextColor(Color.parseColor("#d01716"));};
+                if (kdr1 < kdr2)  {mTV_KDR2.setTextColor(Color.parseColor("#259b24"));mTV_KDR1.setTextColor(Color.parseColor("#d01716"));};
                 if (kdr1 == kdr2)  {mTV_KDR1.setTextColor(Color.parseColor("#6F000000"));mTV_KDR2.setTextColor(Color.parseColor("#6F000000"));};
 
                 Double wlr1 = Double.parseDouble(mTV_WLR1.getText().toString());
                 Double wlr2 = Double.parseDouble(mTV_WLR2.getText().toString());
 
-                if (wlr1 > wlr2)  {mTV_WLR1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_WLR2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (wlr1 < wlr2)  {mTV_WLR2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_WLR1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (wlr1 > wlr2)  {mTV_WLR1.setTextColor(Color.parseColor("#259b24"));mTV_WLR2.setTextColor(Color.parseColor("#d01716"));};
+                if (wlr1 < wlr2)  {mTV_WLR2.setTextColor(Color.parseColor("#259b24"));mTV_WLR1.setTextColor(Color.parseColor("#d01716"));};
                 if (wlr1 == wlr2)  {mTV_WLR1.setTextColor(Color.parseColor("#6F000000"));mTV_WLR2.setTextColor(Color.parseColor("#6F000000"));};
 
                 Double spm1 = Double.parseDouble(mTV_SPM1.getText().toString());
                 Double spm2 = Double.parseDouble(mTV_SPM2.getText().toString());
 
-                if (spm1 > spm2)  {mTV_SPM1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_SPM2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (spm1 < spm2)  {mTV_SPM2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_SPM1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (spm1 > spm2)  {mTV_SPM1.setTextColor(Color.parseColor("#259b24"));mTV_SPM2.setTextColor(Color.parseColor("#d01716"));};
+                if (spm1 < spm2)  {mTV_SPM2.setTextColor(Color.parseColor("#259b24"));mTV_SPM1.setTextColor(Color.parseColor("#d01716"));};
                 if (spm1 == spm2)  {mTV_SPM1.setTextColor(Color.parseColor("#6F000000"));mTV_SPM2.setTextColor(Color.parseColor("#6F000000"));};
 
                 Double kpm1 = Double.parseDouble(mTV_KPM1.getText().toString());
                 Double kpm2 = Double.parseDouble(mTV_KPM2.getText().toString());
 
-                if (kpm1 > kpm2)  {mTV_KPM1.setTextColor(Color.parseColor("#FF0AFF41"));mTV_KPM2.setTextColor(Color.parseColor("#FFFF1501"));};
-                if (kpm1 < kpm2)  {mTV_KPM2.setTextColor(Color.parseColor("#FF0AFF41"));mTV_KPM1.setTextColor(Color.parseColor("#FFFF1501"));};
+                if (kpm1 > kpm2)  {mTV_KPM1.setTextColor(Color.parseColor("#259b24"));mTV_KPM2.setTextColor(Color.parseColor("#d01716"));};
+                if (kpm1 < kpm2)  {mTV_KPM2.setTextColor(Color.parseColor("#259b24"));mTV_KPM1.setTextColor(Color.parseColor("#d01716"));};
                 if (kpm1 == kpm2)  {mTV_KPM1.setTextColor(Color.parseColor("#6F000000"));mTV_KPM2.setTextColor(Color.parseColor("#6F000000"));};
 
             } catch (Exception ex) {

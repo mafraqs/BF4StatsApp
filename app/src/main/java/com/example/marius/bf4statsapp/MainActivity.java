@@ -257,7 +257,7 @@ public class MainActivity extends Activity {
                 sStatsKillStreak = statObjOne.getString("killStreakBonus");
 
                 statObjTwo = statObjOne.getJSONObject("extra");
-                // Round SPM 2 digits after the dot
+                // Round for 2 digits after the dot
                 sExtraKDR = statObjTwo.getString("kdr");
                 String [] sArrayKDR = sExtraKDR.split("\\.");
                 if (sArrayKDR.length == 2) {
@@ -266,7 +266,7 @@ public class MainActivity extends Activity {
                     sExtraKDR = sArrayKDR[0] + ".00";
                 }
 
-                // Round SPM 2 digits after the dot
+                // Round for 2 digits after the dot
                 sExtraWLR = statObjTwo.getString("wlr");
                 String [] sArrayWLR = sExtraWLR.split("\\.");
                 if (sArrayWLR.length == 2) {
@@ -275,7 +275,7 @@ public class MainActivity extends Activity {
                     sExtraWLR = sArrayWLR[0] + ".00";
                 }
 
-                // Round SPM 2 digits after the dot
+                // Round for 2 digits after the dot
                 sExtraSPM = statObjTwo.getString("spm");
                 String [] sArraySPM = sExtraSPM.split("\\.");
                 if (sArraySPM.length == 2) {
@@ -283,7 +283,8 @@ public class MainActivity extends Activity {
                 } else {
                     sExtraSPM = sArraySPM[0] + ".00";
                 }
-                // Round SPM 2 digits after the dot
+
+                // Round for 2 digits after the dot
                 sExtraKPM = statObjTwo.getString("kpm");
                  String [] sArrayKPM = sExtraKPM.split("\\.");
                 if (sArrayKPM.length == 2) {
