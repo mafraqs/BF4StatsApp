@@ -9,8 +9,11 @@ import android.app.TaskStackBuilder;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.graphics.drawable.Drawable;
+=======
 import android.net.Uri;
+>>>>>>> 6993c45afd54688ae5310e3740f6c4c778ebbab2
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -69,10 +72,12 @@ public class MainActivity extends Activity {
     private TextView mTV_SPM;
     private TextView mTV_KPM;
 
+<<<<<<< HEAD
     // Variables for Images in Views
     private ImageView mIV_Rank;
-
+=======
     private ProgressBar spinner;
+>>>>>>> 6993c45afd54688ae5310e3740f6c4c778ebbab2
 
     private List<String> meals = new ArrayList<>();
     //    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
@@ -259,6 +264,40 @@ public class MainActivity extends Activity {
                 statObjTwo = statObjOne.getJSONObject("extra");
                 // Round SPM 2 digits after the dot
                 sExtraKDR = statObjTwo.getString("kdr");
+<<<<<<< HEAD
+                String[] sArrayKDR = sExtraKDR.split("\\.");
+                sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0, 2);
+
+                // Round SPM 2 digits after the dot
+                sExtraWLR = statObjTwo.getString("wlr");
+                String[] sArrayWLR = sExtraWLR.split("\\.");
+                sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0, 2);
+
+                // Round SPM 2 digits after the dot
+                sExtraSPM = statObjTwo.getString("spm");
+                String[] sArraySPM = sExtraSPM.split("\\.");
+                sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0, 2);
+
+                // Round SPM 2 digits after the dot
+                sExtraKPM = statObjTwo.getString("kpm");
+                String[] sArrayKPM = sExtraKPM.split("\\.");
+                sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0, 2);
+
+
+                /* Load values into the Layout */
+
+                //Load RankImage from Assets based on Rank
+                String imgString = "ranks/r" + sRankNr + ".png";
+                try {
+                    // get input stream
+                    InputStream ims = getAssets().open(imgString);
+                    // load image as Drawable
+                    Drawable d = Drawable.createFromStream(ims, null);
+                    // set image to ImageView
+                    mIV_Rank.setImageDrawable(d);
+                } catch (IOException ex) {
+                    return;
+=======
                 String [] sArrayKDR = sExtraKDR.split("\\.");
                 if (sArrayKDR.length == 2) {
                     sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
@@ -283,29 +322,15 @@ public class MainActivity extends Activity {
                 } else {
                     sExtraSPM = sArraySPM[0] + ".00";
                 }
+
                 // Round SPM 2 digits after the dot
                 sExtraKPM = statObjTwo.getString("kpm");
-                 String [] sArrayKPM = sExtraKPM.split("\\.");
+                String [] sArrayKPM = sExtraKPM.split("\\.");
                 if (sArrayKPM.length == 2) {
                     sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
                 } else {
- sExtraKPM = sArrayKPM[0] + ".00";
-
-
-
-                /* Load values into the Layout */
-
-                //Load RankImage from Assets based on Rank
-                String imgString = "ranks/r" + sRankNr + ".png";
-                try {
-                    // get input stream
-                    InputStream ims = getAssets().open(imgString);
-                    // load image as Drawable
-                    Drawable d = Drawable.createFromStream(ims, null);
-                    // set image to ImageView
-                    mIV_Rank.setImageDrawable(d);
-                } catch (IOException ex) {
-                    return;
+                    sExtraKPM = sArrayKPM[0] + ".00";
+>>>>>>> 6993c45afd54688ae5310e3740f6c4c778ebbab2
                 }
 
                 mTV_Name.setText(sPlayerName);

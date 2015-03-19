@@ -352,6 +352,21 @@ public class ComparisonActivity extends Activity {
                 mTV_TimePlayed2.setText(sTimePlayed);
                 mTV_RankNr2.setText(sRankNr);
                 mTV_RankName2.setText(sRankName);
+<<<<<<< HEAD
+//                mTV_Skill2.setText(sStatsSkill);
+//                mTV_Kills2.setText(sStatsKills);
+//                mTV_Headshots2.setText(sStatsHeadshots);
+//                mTV_Deaths2.setText(sStatsDeaths);
+//                mTV_KillStreak2.setText(sStatsKillStreak);
+//                mTV_KDR2.setText(sExtraKDR);
+//                mTV_WLR2.setText(sExtraWLR);
+//                mTV_SPM2.setText(sExtraSPM);
+//                mTV_KPM2.setText(sExtraKPM);
+
+
+                spinner.setVisibility(View.GONE);
+
+=======
                 mTV_Skill2.setText(sStatsSkill);
                 mTV_Kills2.setText(sStatsKills);
                 mTV_Headshots2.setText(sStatsHeadshots);
@@ -362,9 +377,8 @@ public class ComparisonActivity extends Activity {
                 mTV_SPM2.setText(sExtraSPM);
                 mTV_KPM2.setText(sExtraKPM);
                 new PlayerComparator().execute();
-
                 spinner.setVisibility(View.GONE);
-
+>>>>>>> 6993c45afd54688ae5310e3740f6c4c778ebbab2
             } catch (JSONException e) {
                 e.printStackTrace();
             }
