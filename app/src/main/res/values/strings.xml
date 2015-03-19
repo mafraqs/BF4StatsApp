@@ -9,25 +9,28 @@
     <string name="title_activity_search_soldiers">SearchSoldiersActivity</string>
 
 
-    <string name="lblName">Player Name:</string>
-    <string name="lblTag">Clan:</string>
-    <string name="lblScore">Score:</string>
-    <string name="lblRankNr">Rank:</string>
-    <string name="lblRankName">Rank:</string>
-    <string name="lblSkill">Skill:</string>
-    <string name="lblKills">Kills:</string>
-    <string name="lblHeadshots">Headshots:</string>
-    <string name="lblDeaths">Deaths:</string>
-    <string name="lblKillStreak">KillStreak:</string>
-    <string name="lblKDR">K/D:</string>
-    <string name="lblWLR">W/L:</string>
-    <string name="lblSPM">SPM:</string>
-    <string name="lblKPM">KPM:</string>
-    <string name="lblTime">Time Played:</string>
+    <string name="lblName">Player Name</string>
+    <string name="lblTag">Clan</string>
+    <string name="lblScore">SCORE</string>
+    <string name="lblRankNr">RANK</string>
+    <string name="lblRankName">Rank</string>
+    <string name="lblSkill">SKILL</string>
+    <string name="lblKills">KILLS</string>
+    <string name="lblHeadshots">HEADSHOTS</string>
+    <string name="lblDeaths">DEATHS</string>
+    <string name="lblKillStreak">KILLSTREAK</string>
+    <string name="lblKDR">K/D</string>
+    <string name="lblWLR">W/L</string>
+    <string name="lblSPM">SPM</string>
+    <string name="lblKPM">KPM</string>
+    <string name="lblTime">TIME</string>
     <string name="title_activity_comparison">ComparisonActivity</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_compare">Vergleich</string>
     <string name="btn_Go">Go!</string>
+
+    //Card Titles
+    <string name="stats">STATS</string>
 
 </resources>

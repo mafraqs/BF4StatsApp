@@ -1,27 +1,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:text="@string/greeting" />
+        android:text="@string/greeting"/>
 
     <View
         android:id="@+id/divider1"
         android:layout_width="fill_parent"
         android:layout_height="0.3dp"
         android:layout_below="@+id/textView"
-        android:background="@color/grey_black_1000" />
+        android:background="@color/grey_black_1000"/>
 
     <!-- A CardView that contains a TextView -->
     <android.support.v7.widget.CardView
@@ -38,138 +38,60 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/margin_small"
-            android:paddingRight="@dimen/margin_small"
-            android:paddingTop="@dimen/margin_small"
+            android:padding="@dimen/margin_small"
             tools:context=".LinearLayout">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblName" />
-
-                <TextView
-                    android:id="@+id/tvName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayName" />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblTag" />
+                <ImageView
+                    android:id="@+id/rankImg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/r0"/>
 
                 <TextView
                     android:id="@+id/tvTag"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayClan" />
+                    android:layout_gravity="center"
+                    android:layout_weight="0.35"
+                    android:text="[CLAN]"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.75"
+                    android:text="DisplayName"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblScore" />
-
-                <TextView
-                    android:id="@+id/tvScore"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayScore" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblRankNr" />
-
-                <TextView
-                    android:id="@+id/tvRankNr"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayRankNr" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblRankName" />
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"/>
 
                 <TextView
                     android:id="@+id/tvRank"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayRank" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblTime" />
-
-                <TextView
-                    android:id="@+id/tvTime"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayTime" />
+                    android:layout_weight="1"
+                    android:text="Rank"/>
 
             </LinearLayout>
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
 
     <!-- A CardView that contains a TextView -->
@@ -187,122 +109,176 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/margin_small"
-            android:paddingTop="@dimen/margin_small"
-            tools:context=".LinearLayout">
+            android:paddingBottom="10dp">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
+            <RelativeLayout
+                android:id="@+id/heading_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:layout_margin="-8dp"
+                android:background="@color/primary"
+                android:orientation="vertical"
+                android:padding="3dp">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblSkill" />
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:text="@string/stats"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_small"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvSkill"
-                    android:layout_width="0dp"
+                    android:id="@+id/lblScore"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplaySkill" />
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/lblScore"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
 
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblScore"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:text="score"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+            </RelativeLayout>
+            <!--START First Row Stats-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin_small">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/lblTime"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="@string/lblSPM"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="@string/lblWLR"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblKills" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvKills"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayKills" />
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
 
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="time"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvSPM"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="spm"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvWLR"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="wl"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
             </LinearLayout>
+            <!--END First Row Stats-->
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblHeadshots" />
-
-                <TextView
-                    android:id="@+id/tvHeadshots"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayHeadshots" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblDeaths" />
-
-                <TextView
-                    android:id="@+id/tvDeaths"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayDeaths" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblKillStreak" />
-
-                <TextView
-                    android:id="@+id/tvKillStreak"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayKillStreak" />
-
-            </LinearLayout>
 
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
 
     <!-- A CardView that contains a TextView -->
     <android.support.v7.widget.CardView
-        android:id="@+id/cvPlayerMiscellaneous"
+        android:id="@+id/cvPlayerSkill"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/cvPlayerStats"
@@ -315,96 +291,328 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/margin_small"
-            android:paddingTop="@dimen/margin_small"
-            tools:context=".LinearLayout">
+            android:paddingBottom="10dp">
 
-            <LinearLayout
-                android:layout_width="fill_parent"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:layout_margin="-8dp"
+                android:background="@color/primary"
+                android:orientation="vertical"
+                android:padding="3dp">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblKDR" />
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:text="@string/lblSkill"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="@dimen/margin_medium"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvKDR"
-                    android:layout_width="0dp"
+                    android:id="@+id/lblSkill1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayK/D" />
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/lblSkill"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
 
+                <TextView
+                    android:id="@+id/tvSkill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblSkill1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:text="skill"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+            </RelativeLayout>
+
+            <!--START First Row Stats-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/lblKills"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="@string/lblDeaths"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="@string/lblKDR"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvKills"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="kills"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvDeaths"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="deaths"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvKDR"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="kd"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--END First Row Stats-->
+
+
+            <!--START Second Row Stats-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingTop="@dimen/margin_medium">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblWLR" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvWLR"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayW/L" />
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
 
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/lblHeadshots"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="@string/lblKPM"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvHeadshots"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="HS"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvKPM"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="kpm"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--END Second Row Stats-->
+
+            <!--START Second Row Stats-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingTop="@dimen/margin_medium">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblSPM" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvSPM"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplaySPM" />
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
 
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="@string/lblKillStreak"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:paddingLeft="@dimen/margin_small"
-                    android:text="@string/lblKPM" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvKPM"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.50"
-                    android:text="DisplayKPM" />
 
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tvKillStreak"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:text="ks"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+
+                </LinearLayout>
             </LinearLayout>
-
+            <!--END Second Row Stats-->
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
 
 
@@ -414,7 +622,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/btn_GoText"
-        android:onClick="sendMessage" />
+        android:onClick="sendMessage"
+        android:text="@string/btn_GoText"/>
+
 
 </RelativeLayout>

@@ -74,15 +74,15 @@ public class ComparisonActivity extends Activity {
         mTV_TimePlayed1 = (TextView) findViewById(R.id.tvPl1Time);
         mTV_RankNr1 = (TextView) findViewById(R.id.tvPl1RankNr);
         mTV_RankName1 = (TextView) findViewById(R.id.tvPl1Rank);
-        mTV_Skill1 = (TextView) findViewById(R.id.tvPl1Skill);
-        mTV_Kills1 = (TextView) findViewById(R.id.tvPl1Kills);
-        mTV_Headshots1 = (TextView) findViewById(R.id.tvPl1Heads);
-        mTV_Deaths1 = (TextView) findViewById(R.id.tvPl1Deaths);
-        mTV_KillStreak1 = (TextView) findViewById(R.id.tvPl1Streak);
-        mTV_KDR1 = (TextView) findViewById(R.id.tvPl1KD);
-        mTV_WLR1 = (TextView) findViewById(R.id.tvPl1WL);
-        mTV_SPM1 = (TextView) findViewById(R.id.tvPl1SPM);
-        mTV_KPM1 = (TextView) findViewById(R.id.tvPl1KPM);
+//        mTV_Skill1 = (TextView) findViewById(R.id.tvPl1Skill);
+//        mTV_Kills1 = (TextView) findViewById(R.id.tvPl1Kills);
+//        mTV_Headshots1 = (TextView) findViewById(R.id.tvPl1Heads);
+//        mTV_Deaths1 = (TextView) findViewById(R.id.tvPl1Deaths);
+//        mTV_KillStreak1 = (TextView) findViewById(R.id.tvPl1Streak);
+//        mTV_KDR1 = (TextView) findViewById(R.id.tvPl1KD);
+//        mTV_WLR1 = (TextView) findViewById(R.id.tvPl1WL);
+//        mTV_SPM1 = (TextView) findViewById(R.id.tvPl1SPM);
+//        mTV_KPM1 = (TextView) findViewById(R.id.tvPl1KPM);
 
         mTV_Name2 = (TextView) findViewById(R.id.tvPl2Name);
         mTV_Tag2 = (TextView) findViewById(R.id.tvPl2Clan);
@@ -90,15 +90,15 @@ public class ComparisonActivity extends Activity {
         mTV_TimePlayed2 = (TextView) findViewById(R.id.tvPl2Time);
         mTV_RankNr2 = (TextView) findViewById(R.id.tvPl2RankNr);
         mTV_RankName2 = (TextView) findViewById(R.id.tvPl2Rank);
-        mTV_Skill2 = (TextView) findViewById(R.id.tvPl2Skill);
-        mTV_Kills2 = (TextView) findViewById(R.id.tvPl2Kills);
-        mTV_Headshots2 = (TextView) findViewById(R.id.tvPl2Heads);
-        mTV_Deaths2 = (TextView) findViewById(R.id.tvPl2Deaths);
-        mTV_KillStreak2 = (TextView) findViewById(R.id.tvPl2Streak);
-        mTV_KDR2 = (TextView) findViewById(R.id.tvPl2KD);
-        mTV_WLR2 = (TextView) findViewById(R.id.tvPl2WL);
-        mTV_SPM2 = (TextView) findViewById(R.id.tvPl2SPM);
-        mTV_KPM2 = (TextView) findViewById(R.id.tvPl2KPM);
+//        mTV_Skill2 = (TextView) findViewById(R.id.tvPl2Skill);
+//        mTV_Kills2 = (TextView) findViewById(R.id.tvPl2Kills);
+//        mTV_Headshots2 = (TextView) findViewById(R.id.tvPl2Heads);
+//        mTV_Deaths2 = (TextView) findViewById(R.id.tvPl2Deaths);
+//        mTV_KillStreak2 = (TextView) findViewById(R.id.tvPl2Streak);
+//        mTV_KDR2 = (TextView) findViewById(R.id.tvPl2KD);
+//        mTV_WLR2 = (TextView) findViewById(R.id.tvPl2WL);
+//        mTV_SPM2 = (TextView) findViewById(R.id.tvPl2SPM);
+//        mTV_KPM2 = (TextView) findViewById(R.id.tvPl2KPM);
 
         mTV_Player1Name = (TextView) findViewById(R.id.tvPlayer1);
         mTV_Player2Name = (TextView) findViewById(R.id.tvPlayer2);
@@ -150,7 +150,8 @@ public class ComparisonActivity extends Activity {
             }
 
             // Name and Clantag: player->name/tag  // Score and time played: player->score/timePlayed
-            String sPlayerName, sPlayerTag, sPlayerScore, sTimePlayed;
+            String sPlayerName, sPlayerTag, sPlayerScore;
+            int sTimePlayed;
             String sRankNr, sRankName; //Rank number and name: rank->nr/name
 
             // Skill, Kills, Deaths: stats->skill/kills/headshots/deaths/killStreakBonus
@@ -170,7 +171,10 @@ public class ComparisonActivity extends Activity {
                 sPlayerName = statObjOne.getString("name");
                 sPlayerTag = statObjOne.getString("tag");
                 sPlayerScore = statObjOne.getString("score");
-                sTimePlayed = statObjOne.getString("timePlayed");
+                //TimePlayed to Hour (round)
+                double toHour = Integer.parseInt(statObjOne.getString("timePlayed"));
+                toHour = Math.round(toHour/3600);
+                sTimePlayed = (int) Math.round(toHour);
 
                 statObjTwo = statObjOne.getJSONObject("rank");
                 sRankNr = statObjTwo.getString("nr");
@@ -210,15 +214,15 @@ public class ComparisonActivity extends Activity {
                 mTV_TimePlayed1.setText(sTimePlayed);
                 mTV_RankNr1.setText(sRankNr);
                 mTV_RankName1.setText(sRankName);
-                mTV_Skill1.setText(sStatsSkill);
-                mTV_Kills1.setText(sStatsKills);
-                mTV_Headshots1.setText(sStatsHeadshots);
-                mTV_Deaths1.setText(sStatsDeaths);
-                mTV_KillStreak1.setText(sStatsKillStreak);
-                mTV_KDR1.setText(sExtraKDR);
-                mTV_WLR1.setText(sExtraWLR);
-                mTV_SPM1.setText(sExtraSPM);
-                mTV_KPM1.setText(sExtraKPM);
+//                mTV_Skill1.setText(sStatsSkill);
+//                mTV_Kills1.setText(sStatsKills);
+//                mTV_Headshots1.setText(sStatsHeadshots);
+//                mTV_Deaths1.setText(sStatsDeaths);
+//                mTV_KillStreak1.setText(sStatsKillStreak);
+//                mTV_KDR1.setText(sExtraKDR);
+//                mTV_WLR1.setText(sExtraWLR);
+//                mTV_SPM1.setText(sExtraSPM);
+//                mTV_KPM1.setText(sExtraKPM);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -258,7 +262,8 @@ public class ComparisonActivity extends Activity {
             }
 
             // Name and Clantag: player->name/tag  // Score and time played: player->score/timePlayed
-            String sPlayerName, sPlayerTag, sPlayerScore, sTimePlayed;
+            String sPlayerName, sPlayerTag, sPlayerScore;
+            int sTimePlayed;
             String sRankNr, sRankName; //Rank number and name: rank->nr/name
 
             // Skill, Kills, Deaths: stats->skill/kills/headshots/deaths/killStreakBonus
@@ -273,12 +278,16 @@ public class ComparisonActivity extends Activity {
                 JSONObject statObjOne;      // JSON-Objekt 1. Ebene
                 JSONObject statObjTwo;      // JSON-Objekt 2. Ebene
                 JSONObject statObjThree;    // JSON-Objekt 3. Ebene
-                statObjOne = statObjMain.getJSONObject("player");
 
+                statObjOne = statObjMain.getJSONObject("player");
                 sPlayerName = statObjOne.getString("name");
                 sPlayerTag = statObjOne.getString("tag");
+
                 sPlayerScore = statObjOne.getString("score");
-                sTimePlayed = statObjOne.getString("timePlayed");
+                //TimePlayed to Hour (round)
+                double toHour = Integer.parseInt(statObjOne.getString("timePlayed"));
+                toHour = Math.round(toHour/3600);
+                sTimePlayed = (int) Math.round(toHour);
 
                 statObjTwo = statObjOne.getJSONObject("rank");
                 sRankNr = statObjTwo.getString("nr");
@@ -318,20 +327,19 @@ public class ComparisonActivity extends Activity {
                 mTV_TimePlayed2.setText(sTimePlayed);
                 mTV_RankNr2.setText(sRankNr);
                 mTV_RankName2.setText(sRankName);
-                mTV_Skill2.setText(sStatsSkill);
-                mTV_Kills2.setText(sStatsKills);
-                mTV_Headshots2.setText(sStatsHeadshots);
-                mTV_Deaths2.setText(sStatsDeaths);
-                mTV_KillStreak2.setText(sStatsKillStreak);
-                mTV_KDR2.setText(sExtraKDR);
-                mTV_WLR2.setText(sExtraWLR);
-                mTV_SPM2.setText(sExtraSPM);
-                mTV_KPM2.setText(sExtraKPM);
+//                mTV_Skill2.setText(sStatsSkill);
+//                mTV_Kills2.setText(sStatsKills);
+//                mTV_Headshots2.setText(sStatsHeadshots);
+//                mTV_Deaths2.setText(sStatsDeaths);
+//                mTV_KillStreak2.setText(sStatsKillStreak);
+//                mTV_KDR2.setText(sExtraKDR);
+//                mTV_WLR2.setText(sExtraWLR);
+//                mTV_SPM2.setText(sExtraSPM);
+//                mTV_KPM2.setText(sExtraKPM);
 
-<<<<<<< HEAD
-=======
+
                 spinner.setVisibility(View.GONE);
->>>>>>> e871eaa8f8ad7e20b4d7c8ea89e1fd800f5c17d5
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

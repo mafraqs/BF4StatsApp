@@ -4,14 +4,17 @@ import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -22,6 +25,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -55,6 +59,8 @@ public class MainActivity extends Activity {
     private TextView mTV_SPM;
     private TextView mTV_KPM;
 
+    // Variables for Images in Views
+    private ImageView mIV_Rank;
 
     private List<String> meals = new ArrayList<>();
     //    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
@@ -74,7 +80,7 @@ public class MainActivity extends Activity {
         mTV_Tag = (TextView) findViewById(R.id.tvTag);
         mTV_Score = (TextView) findViewById(R.id.tvScore);
         mTV_TimePlayed = (TextView) findViewById(R.id.tvTime);
-        mTV_RankNr = (TextView) findViewById(R.id.tvRankNr);
+//        mTV_RankNr = (TextView) findViewById(R.id.tvRankNr);
         mTV_RankName = (TextView) findViewById(R.id.tvRank);
         mTV_Skill = (TextView) findViewById(R.id.tvSkill);
         mTV_Kills = (TextView) findViewById(R.id.tvKills);
@@ -85,6 +91,8 @@ public class MainActivity extends Activity {
         mTV_WLR = (TextView) findViewById(R.id.tvWLR);
         mTV_SPM = (TextView) findViewById(R.id.tvSPM);
         mTV_KPM = (TextView) findViewById(R.id.tvKPM);
+
+        mIV_Rank = (ImageView) findViewById(R.id.rankImg);
 
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
@@ -141,12 +149,13 @@ public class MainActivity extends Activity {
             super.onPostExecute(json);
 
             if (json.equals("")) {
-                Toast.makeText(getApplicationContext(),"Keine Daten gefunden!",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Keine Daten gefunden!", Toast.LENGTH_LONG).show();
                 return;
             }
 
             // Name and Clantag: player->name/tag  // Score and time played: player->score/timePlayed
-            String sPlayerName, sPlayerTag, sPlayerScore, sTimePlayed;
+            String sPlayerName, sPlayerTag, sPlayerScore;
+            int sTimePlayed;
             String sRankNr, sRankName; //Rank number and name: rank->nr/name
 
             // Skill, Kills, Deaths: stats->skill/kills/headshots/deaths/killStreakBonus
@@ -165,8 +174,17 @@ public class MainActivity extends Activity {
 
                 sPlayerName = statObjOne.getString("name");
                 sPlayerTag = statObjOne.getString("tag");
+                //Check for existing Clantag
+                if (!sPlayerTag.isEmpty()) {
+                    sPlayerTag = "[" + sPlayerTag + "]";
+                    Log.d("MainActivity", "Clan-Tag: Kein Tag vorhanden");
+                }
+
+                //TimePlayed to Hour (round)
                 sPlayerScore = statObjOne.getString("score");
-                sTimePlayed = statObjOne.getString("timePlayed");
+                double toHour = Integer.parseInt(statObjOne.getString("timePlayed"));
+                toHour = Math.round(toHour/3600);
+                sTimePlayed = (int) Math.round(toHour);
 
                 statObjTwo = statObjOne.getJSONObject("rank");
                 sRankNr = statObjTwo.getString("nr");
@@ -182,29 +200,45 @@ public class MainActivity extends Activity {
                 statObjTwo = statObjOne.getJSONObject("extra");
                 // Round SPM 2 digits after the dot
                 sExtraKDR = statObjTwo.getString("kdr");
-                String [] sArrayKDR = sExtraKDR.split("\\.");
-                sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
+                String[] sArrayKDR = sExtraKDR.split("\\.");
+                sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0, 2);
 
                 // Round SPM 2 digits after the dot
                 sExtraWLR = statObjTwo.getString("wlr");
-                String [] sArrayWLR = sExtraWLR.split("\\.");
-                sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0,2);
+                String[] sArrayWLR = sExtraWLR.split("\\.");
+                sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0, 2);
 
                 // Round SPM 2 digits after the dot
                 sExtraSPM = statObjTwo.getString("spm");
-                String [] sArraySPM = sExtraSPM.split("\\.");
-                sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0,2);
+                String[] sArraySPM = sExtraSPM.split("\\.");
+                sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0, 2);
 
                 // Round SPM 2 digits after the dot
                 sExtraKPM = statObjTwo.getString("kpm");
-                String [] sArrayKPM = sExtraKPM.split("\\.");
-                sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
+                String[] sArrayKPM = sExtraKPM.split("\\.");
+                sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0, 2);
+
+
+                /* Load values into the Layout */
+
+                //Load RankImage from Assets based on Rank
+                String imgString = "ranks/r" + sRankNr + ".png";
+                try {
+                    // get input stream
+                    InputStream ims = getAssets().open(imgString);
+                    // load image as Drawable
+                    Drawable d = Drawable.createFromStream(ims, null);
+                    // set image to ImageView
+                    mIV_Rank.setImageDrawable(d);
+                } catch (IOException ex) {
+                    return;
+                }
 
                 mTV_Name.setText(sPlayerName);
                 mTV_Tag.setText(sPlayerTag);
                 mTV_Score.setText(sPlayerScore);
-                mTV_TimePlayed.setText(sTimePlayed);
-                mTV_RankNr.setText(sRankNr);
+                mTV_TimePlayed.setText(""+sTimePlayed+"H");
+//                mTV_RankNr.setText(sRankNr);
                 mTV_RankName.setText(sRankName);
                 mTV_Skill.setText(sStatsSkill);
                 mTV_Kills.setText(sStatsKills);
@@ -215,6 +249,7 @@ public class MainActivity extends Activity {
                 mTV_WLR.setText(sExtraWLR);
                 mTV_SPM.setText(sExtraSPM);
                 mTV_KPM.setText(sExtraKPM);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
