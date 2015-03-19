@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +28,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -95,6 +99,25 @@ public class MainActivity extends Activity {
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
 
+
+        String FILENAME = "lastPlayer";
+        try {
+            FileInputStream fos = openFileInput(FILENAME);
+            StringBuffer fileContent = new StringBuffer("");
+            byte[] buffer = new byte[1024];
+            int n = 0;
+            while ((n = fos.read(buffer)) != -1)
+            {
+                fileContent.append(new String(buffer, 0, n));
+            }
+            fos.close();
+            new JsonFetcher().onPostExecute(fileContent.toString());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         handleIntent(getIntent());
     }
 
@@ -155,6 +178,7 @@ public class MainActivity extends Activity {
                 while ((inputLine = in.readLine()) != null) {
                     json += inputLine;
                 }
+                in.close();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -246,6 +270,18 @@ public class MainActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+            String FILENAME = "lastPlayer";
+            try {
+                FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+                fos.write(json.getBytes());
+                fos.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 

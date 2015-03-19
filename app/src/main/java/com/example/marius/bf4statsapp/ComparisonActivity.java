@@ -327,11 +327,7 @@ public class ComparisonActivity extends Activity {
                 mTV_WLR2.setText(sExtraWLR);
                 mTV_SPM2.setText(sExtraSPM);
                 mTV_KPM2.setText(sExtraKPM);
-
-<<<<<<< HEAD
-=======
                 spinner.setVisibility(View.GONE);
->>>>>>> e871eaa8f8ad7e20b4d7c8ea89e1fd800f5c17d5
             } catch (JSONException e) {
                 e.printStackTrace();
             }
