@@ -289,7 +289,8 @@ public class MainActivity extends Activity {
                 if (sArrayKPM.length == 2) {
                     sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
                 } else {
- sExtraKPM = sArrayKPM[0] + ".00";
+                    sExtraKPM = sArrayKPM[0] + ".00";
+                }
 
 
 
