@@ -417,4 +417,12 @@
         android:text="@string/btn_GoText"
         android:onClick="sendMessage" />
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBarM"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView" />
+
 </RelativeLayout>

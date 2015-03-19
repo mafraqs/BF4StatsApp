@@ -13,13 +13,13 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,6 +65,7 @@ public class MainActivity extends Activity {
     private TextView mTV_SPM;
     private TextView mTV_KPM;
 
+    private ProgressBar spinner;
 
     private List<String> meals = new ArrayList<>();
     //    private final static String urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=chill3rman&output=json";
@@ -98,6 +99,10 @@ public class MainActivity extends Activity {
 
        /* mCardView = (CardView) findViewById(R.id.cardview);
         mCardView.setElevation(50);*/
+
+
+        spinner = (ProgressBar)findViewById(R.id.progressBarM);
+        spinner.setVisibility(View.GONE);
 
 
         String FILENAME = "lastPlayer";
@@ -139,7 +144,9 @@ public class MainActivity extends Activity {
             String query = intent.getStringExtra(SearchManager.QUERY);
             //use the query to search your data somehow
             urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=" + query + "&opt=details,stats,extra&output=json";
+            spinner.setVisibility(View.VISIBLE);
             new JsonFetcher().execute();
+            spinner.setVisibility(View.GONE);
         }
 
     }
