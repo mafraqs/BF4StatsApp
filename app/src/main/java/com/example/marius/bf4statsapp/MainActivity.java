@@ -1,9 +1,15 @@
 package com.example.marius.bf4statsapp;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.SearchManager;
+import android.app.TaskStackBuilder;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -106,12 +112,34 @@ public class MainActivity extends Activity {
     private void handleIntent(Intent intent) {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            notificationCaller();
             String query = intent.getStringExtra(SearchManager.QUERY);
             //use the query to search your data somehow
             urlString = "http://api.bf4stats.com/api/playerInfo?plat=pc&name=" + query + "&opt=details,stats,extra&output=json";
             new JsonFetcher().execute();
         }
 
+    }
+
+    public void notificationCaller(){
+        Notification.Builder mBuilder =
+                new Notification.Builder(MainActivity.this)
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle("BF4 RangUp")
+                        .setContentText("A Friend just got PROMOTED!")
+                        .setSound(Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/raw/promoted"));
+        Intent resultIntent = new Intent(this, MainActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addNextIntent(resultIntent);
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(
+                        0,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+        mBuilder.setContentIntent(resultPendingIntent);
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(1, mBuilder.build());
     }
 
     public class JsonFetcher extends AsyncTask<Void, Void, String> {
