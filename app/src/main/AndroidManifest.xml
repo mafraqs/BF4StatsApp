@@ -3,6 +3,7 @@
     package="com.example.marius.bf4statsapp" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -37,10 +38,28 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.marius.bf4statsapp.MainActivity" />
+
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewsActivity"
+            android:label="@string/title_activity_news"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.marius.bf4statsapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".NewActivity"
+            android:label="@string/title_activity_new"
+            android:parentActivityName=".NewsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.marius.bf4statsapp.NewsActivity" />
         </activity>
     </application>
 

@@ -6,6 +6,7 @@
     <string name="btn_GoText">Vergleichen!</string>
     <string name="action_search">test</string>
     <string name="search_title">Suche</string>
+    <string name="news_title">Nachrichten</string>
     <string name="title_activity_search_soldiers">SearchSoldiersActivity</string>
 
 
@@ -32,5 +33,7 @@
 
     //Card Titles
     <string name="stats">STATS</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="title_activity_new">NewActivity</string>
 
 </resources>
