@@ -586,15 +586,6 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
-            <Button
-                android:id="@+id/btn_Go"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:onClick="sendMessage"
-                android:text="@string/btn_GoText"/>
-
             <ProgressBar
                 style="?android:attr/progressBarStyleSmall"
                 android:layout_width="match_parent"
