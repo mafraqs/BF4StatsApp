@@ -64,8 +64,8 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         public ArticlesViewHolder(View v) {
             super(v);
 
-            vArticleName = (TextView) v.findViewById(R.id.articleTitle);
-            vArticleImage = (ImageView) v.findViewById(R.id.articleImage);
+            vArticleName = (TextView) v.findViewById(R.id.rowArticleTitle);
+            vArticleImage = (ImageView) v.findViewById(R.id.rowArticleImage);
 
             view = v;
             view.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +74,7 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
                 public void onClick(View v) {
                     // item clicked
                     Toast.makeText(v.getContext(), currentArticle.title, Toast.LENGTH_LONG).show();
-                    Log.w("XXX", "ERRORRRRRRR");
+                    Log.e("ArticlesOnClickListener", "Article selected: " + currentArticle.title);
 
                     Intent intent = new Intent(v.getContext(), SingleArticle.class);
                     v.getContext().startActivity(intent);

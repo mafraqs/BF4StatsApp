@@ -14,16 +14,15 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/articleImage"
+            android:id="@+id/rowArticleImage"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-
             android:scaleType="centerCrop" />
 
         <TextView
-            android:id="@+id/articleTitle"
+            android:id="@+id/rowArticleTitle"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_gravity="center"

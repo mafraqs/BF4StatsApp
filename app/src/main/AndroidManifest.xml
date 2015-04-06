@@ -66,10 +66,10 @@
         <activity
             android:name=".SingleArticle"
             android:label="@string/title_activity_single_article"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ArticlesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.marius.bf4statsapp.MainActivity"/>
+                android:value="com.example.marius.bf4statsapp.ArticlesActivity"/>
         </activity>
 
     </application>

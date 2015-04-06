@@ -2,6 +2,8 @@ package uihelper;
 
 import android.content.Context;
 
+import com.example.marius.bf4statsapp.SingleArticle;
+
 /**
  * Created by Marius on 06.04.2015.
  */
@@ -9,13 +11,14 @@ public class ArticleInfo {
 
     public String title;
     public String description;
-    public String imageName;
+    public String imageURL;
+    public String pubDate;
 
 
     public int getImageResourceId(Context context)
     {
         try {
-            return context.getResources().getIdentifier(this.imageName, "drawable", context.getPackageName());
+            return context.getResources().getIdentifier(this.imageURL, "drawable", context.getPackageName());
 
         } catch (Exception e) {
             e.printStackTrace();
