@@ -381,6 +381,11 @@ public class MainActivity extends Activity {
             startActivity(intent);
         }
 
+        if (id == R.id.deals) {
+            Intent intent = new Intent(this, DealsActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

@@ -35,5 +35,6 @@
     <string name="stats">STATS</string>
     <string name="title_activity_news">NewsActivity</string>
     <string name="title_activity_new">NewActivity</string>
+    <string name="title_activity_deals">Angebote</string>
 
 </resources>

@@ -25,4 +25,9 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="News"/>
+    <item
+        android:id="@+id/deals"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Deals"/>
 </menu>
