@@ -111,9 +111,10 @@ public class ArticlesActivity extends Activity {
     // thread from android 4.0 onwards
     private class GetRSSFeed extends AsyncTask<Void, Void, ArrayList<RssItem>> {
 
-        private Context mContext;
+
         public List<ArticleInfo> asyResult = new ArrayList<ArticleInfo>();
 
+        private Context mContext;
         public GetRSSFeed(Context context) {
             mContext = context;
         }
@@ -207,7 +208,8 @@ public class ArticlesActivity extends Activity {
                     ArticleInfo ai = new ArticleInfo();
                     ai.title = itemTitlesArray[x];
                     ai.description = itemDescriptionsArray[x];
-                    ai.imageURL = itemImgURLsArray[x];
+//                    ai.imageURL = itemImgURLsArray[x];
+                    ai.imageURL = "r0";
                     ai.pubDate = itemPubDateArray[x];
 
                     asyResult.add(ai);
@@ -224,9 +226,10 @@ public class ArticlesActivity extends Activity {
                         Toast.LENGTH_SHORT).show();
             }
             pDialog.dismiss();
-            Toast.makeText(mContext, "FERTIG", Toast.LENGTH_LONG).show();
-            /*mAdapter = new ArticlesAdapter(asyResult, R.layout.card_layout_articles, mContext);
-            mRecyclerView.setAdapter(mAdapter);*/
+            Toast.makeText(mContext, "FERTIG \n" + asyResult.get(1).title, Toast.LENGTH_LONG).show();
+//            Toast.makeText(mContext, "FERTIG", Toast.LENGTH_LONG).show();
+            mAdapter = new ArticlesAdapter(asyResult, R.layout.card_layout_articles, mContext);
+            mRecyclerView.setAdapter(mAdapter);
         }
     }
 

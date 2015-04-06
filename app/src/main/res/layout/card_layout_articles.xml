@@ -5,34 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
-    android:orientation="horizontal"
-    card_view:cardCornerRadius="1dp" >
+    card_view:cardCornerRadius="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/rowArticleImage"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:scaleType="centerCrop" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/rowArticleTitle"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_weight="2"
-            android:background="?android:selectableItemBackground"
-            android:gravity="center"
-            android:text="This will be the title"
-            android:textColor="@android:color/secondary_text_light"
-            android:textSize="24sp" />
+            <ImageView
+                android:id="@+id/rowArticleImage"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/r0"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/rowArticleGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary"
+                android:padding="@dimen/margin_tiny"
+                android:text="This will be the Game"
+                android:textColor="@color/grey_800"/>
+
+            <TextView
+                android:id="@+id/rowArticleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_tiny"
+                android:text="This will be the Title"
+                android:textColor="@color/primary_text"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
 </android.support.v7.widget.CardView>
