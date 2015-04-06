@@ -1,6 +1,8 @@
 package com.example.marius.bf4statsapp;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -118,6 +120,7 @@ public class DealsActivity extends Activity {
             // do stuff on UI thread with the html
             final String [] titles = new String[5];
             final String [] imgUrls = new String[5];
+            final String [] links = new String[5];
 
             // remove most of the html file
             String [] firstSplit = htmlCode.split("<main id=\"main\" class=\"content-main\">");
@@ -144,6 +147,16 @@ public class DealsActivity extends Activity {
                 index2Counter++;
             }
 
+            // GET THE LINK
+            // skipt the first one and start with index 1
+            int index3Counter = 0;
+            for (int i = 1; i < 6; i++) {
+                String [] buf1 = third[i].split("<a class=\"section-title-link\" href=\"");
+                String [] buf2 = buf1[1].split("\" rel=\"nofollow\">");
+                links[index3Counter] = buf2[0];
+                index3Counter++;
+            }
+
 
             adapter=new CustomAdapter(DealsActivity.this, imgUrls, titles);
             listView.setAdapter(adapter);
@@ -154,6 +167,9 @@ public class DealsActivity extends Activity {
                     View row = listView.getChildAt(position);
                     TextView txtV = (TextView) row.findViewById(R.id.textView2);
                     ImageView imgV = (ImageView) row.findViewById(R.id.imageView2);
+
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(links[position]));
+                    startActivity(browserIntent);
 
                     /*
                     Intent intent = new Intent(DealsActivity.this, NewActivity.class);
