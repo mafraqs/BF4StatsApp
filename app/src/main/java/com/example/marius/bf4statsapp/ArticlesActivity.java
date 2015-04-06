@@ -34,7 +34,7 @@ public class ArticlesActivity extends Activity {
 
     private RecyclerView mRecyclerView;
     private ArticlesAdapter mAdapter;
-    public List<ArticleInfo> result = new ArrayList<ArticleInfo>();
+
 
     TextView txtRowArticle;
     ImageView imgRowArticle;
@@ -59,8 +59,10 @@ public class ArticlesActivity extends Activity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        mAdapter = new ArticlesAdapter(result, R.layout.card_layout_articles, this);
+        mAdapter = new ArticlesAdapter(createList(25), R.layout.card_layout_articles, this);
         mRecyclerView.setAdapter(mAdapter);
+
+        new GetRSSFeed(ArticlesActivity.this).execute();
     }
 
 
@@ -102,7 +104,6 @@ public class ArticlesActivity extends Activity {
         return result;
     }
 
-
     // AsyncTask is necessary because without it fetching the RSS feed will
     // happen on the main thread, this can freeze the UI and cause your App to
     // be shutdown by Android
@@ -111,12 +112,7 @@ public class ArticlesActivity extends Activity {
     private class GetRSSFeed extends AsyncTask<Void, Void, ArrayList<RssItem>> {
 
         private Context mContext;
-
-        public String[] itemTitlesArray;
-        public String[] itemDescriptionsArray;
-        public String[] itemImgURLsArray;
-        public String[] itemPubDateArray;
-
+        public List<ArticleInfo> asyResult = new ArrayList<ArticleInfo>();
 
         public GetRSSFeed(Context context) {
             mContext = context;
@@ -167,15 +163,8 @@ public class ArticlesActivity extends Activity {
         @Override
         protected void onPostExecute(ArrayList<RssItem> items) {
 
-
-            ArticleInfo ai = new ArticleInfo();
-
-
             if (items != null) {
                 // Example: print RSS items titles to CatLog
-                for (RssItem rssItem : items) {
-                    Log.i("RSS Reader", rssItem.getTitle());
-                }
 
                 // Example:populate TextView with first RSS Item's title
 //                txtRowArticle.setText(items.get(0).getTitle());
@@ -186,15 +175,17 @@ public class ArticlesActivity extends Activity {
                 // Get item titles from the items ArrayList and put them into a
                 // string array for use with the ArrayAdapter
 
-
-
-
                 String description;
                 String imgURL;
+                int myArrayLength = items.size();
+                String[] itemTitlesArray = new String[myArrayLength];
+                String[] itemDescriptionsArray = new String[myArrayLength];
+                String[] itemImgURLsArray = new String[myArrayLength];
+                String[] itemPubDateArray = new String[myArrayLength];
 
                 int i = 0;
                 for (RssItem rssItem : items) {
-                    Log.i("RSS Reader", rssItem.getTitle());
+                    Log.i("RSS Reader", i + " " + rssItem.getTitle());
                     itemTitlesArray[i] = rssItem.getTitle();
                     itemDescriptionsArray[i] = rssItem.getDescription();
                     itemPubDateArray[i] = rssItem.getPubDate().toLocaleString();
@@ -212,14 +203,16 @@ public class ArticlesActivity extends Activity {
                 }
 
                 // Set Title, Content and ImageURL
-//                for (int x = 0; i <= itemTitlesArray.length; i++) {
-//                    ai.title = itemTitlesArray[i];
-//                    ai.description = itemDescriptionsArray[i];
-//                    ai.imageURL = itemImgURLsArray[i];
-//                    ai.pubDate = itemPubDateArray[i];
-//
-//                    result.add(ai);
-//                }
+                for (int x = 0; x < myArrayLength; x++) {
+                    ArticleInfo ai = new ArticleInfo();
+                    ai.title = itemTitlesArray[x];
+                    ai.description = itemDescriptionsArray[x];
+                    ai.imageURL = itemImgURLsArray[x];
+                    ai.pubDate = itemPubDateArray[x];
+
+                    asyResult.add(ai);
+
+                }
 
                 // Set titles as listview items
 //                mAdapter = new ArticlesAdapter(result, R.layout.card_layout_articles, mContext);
@@ -231,24 +224,10 @@ public class ArticlesActivity extends Activity {
                         Toast.LENGTH_SHORT).show();
             }
             pDialog.dismiss();
+            Toast.makeText(mContext, "FERTIG", Toast.LENGTH_LONG).show();
+            /*mAdapter = new ArticlesAdapter(asyResult, R.layout.card_layout_articles, mContext);
+            mRecyclerView.setAdapter(mAdapter);*/
         }
-
-        private List<ArticleInfo> createList(int size) {
-
-            List<ArticleInfo> result = new ArrayList<ArticleInfo>();
-            for (int i = 1; i <= size; i++) {
-                ArticleInfo ai = new ArticleInfo();
-                ai.title = itemTitlesArray[i];
-                ai.description = itemDescriptionsArray[i];
-                ai.imageURL = itemImgURLsArray[i];
-                ai.pubDate = itemPubDateArray[i];
-
-                result.add(ai);
-            }
-
-            return result;
-        }
-
     }
 
 }
