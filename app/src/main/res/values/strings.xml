@@ -2,7 +2,11 @@
     <string name="app_name">BF4Stats</string>
 
     <string name="greeting">Ultimative BF4Stats 5.000!</string>
+
     <string name="action_settings">Einstellungen</string>
+    <string name="action_articles">News</string>
+    <string name="action_compare">Vergleich</string>
+
     <string name="btn_GoText">Vergleichen!</string>
     <string name="action_search">test</string>
     <string name="search_title">Suche</string>
@@ -27,10 +31,10 @@
     <string name="title_activity_comparison">ComparisonActivity</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_compare">Vergleich</string>
     <string name="btn_Go">Go!</string>
 
     //Card Titles
     <string name="stats">STATS</string>
+    <string name="title_activity_articles">ArticlesActivity</string>
 
 </resources>

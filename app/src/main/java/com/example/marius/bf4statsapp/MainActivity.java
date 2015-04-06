@@ -371,6 +371,16 @@ public class MainActivity extends Activity {
             return true;
         }
 
+        if (id == R.id.articles) {
+            Intent intent = new Intent(this, ArticlesActivity.class);
+            startActivity(intent);
+        }
+
+        if (id == R.id.comparison) {
+            Intent intent = new Intent(this, ComparisonActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }
