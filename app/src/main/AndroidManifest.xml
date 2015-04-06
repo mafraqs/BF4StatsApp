@@ -1,64 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.marius.bf4statsapp" >
+<manifest
+    package="com.example.marius.bf4statsapp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
 
+        <!--MainActivity-->
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <meta-data
                 android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
+                android:resource="@xml/searchable"/>
 
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.SEARCH"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
+        <!--SearchSoldiers-->
         <activity
             android:name=".SearchSoldiersActivity"
-            android:label="@string/title_activity_search_soldiers" >
+            android:label="@string/title_activity_search_soldiers">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>
         </activity>
 
+        <!--Comparison-->
         <activity
             android:name=".ComparisonActivity"
             android:label="@string/title_activity_comparison"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.marius.bf4statsapp.MainActivity" />
+                android:value="com.example.marius.bf4statsapp.MainActivity"/>
 
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.SEARCH"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
+        <!--Articles (multiple)-->
         <activity
             android:name=".ArticlesActivity"
             android:label="@string/title_activity_articles"
-            android:parentActivityName=".MainActivity" >
-
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.marius.bf4statsapp.MainActivity" />
-
-
+                android:value="com.example.marius.bf4statsapp.MainActivity"/>
         </activity>
+
+        <!--Arcticle (single)-->
+        <activity
+            android:name=".SingleArticle"
+            android:label="@string/title_activity_single_article"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.marius.bf4statsapp.MainActivity"/>
+        </activity>
+
     </application>
 
 </manifest>

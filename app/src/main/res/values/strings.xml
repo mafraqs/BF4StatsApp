@@ -36,5 +36,6 @@
     //Card Titles
     <string name="stats">STATS</string>
     <string name="title_activity_articles">ArticlesActivity</string>
+    <string name="title_activity_single_article">SingleArticle</string>
 
 </resources>

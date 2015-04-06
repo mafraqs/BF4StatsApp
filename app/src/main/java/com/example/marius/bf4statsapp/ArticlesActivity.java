@@ -26,7 +26,7 @@ public class ArticlesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articles);
 
-        mRecyclerView = (RecyclerView)findViewById(R.id.cardList);
+        mRecyclerView = (RecyclerView) findViewById(R.id.cardList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -61,9 +61,9 @@ public class ArticlesActivity extends Activity {
     private List<ArticleInfo> createList(int size) {
 
         List<ArticleInfo> result = new ArrayList<ArticleInfo>();
-        for (int i=1; i <= size; i++) {
+        for (int i = 1; i <= size; i++) {
             ArticleInfo ai = new ArticleInfo();
-            ai.title =  "title" + i;
+            ai.title = "title" + i;
             ai.description = "desc" + i;
             ai.imageName = "r0";
 

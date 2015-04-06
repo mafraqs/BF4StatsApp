@@ -381,6 +381,11 @@ public class MainActivity extends Activity {
             startActivity(intent);
         }
 
+        if (id == R.id.single) {
+            Intent intent = new Intent(this, SingleArticle.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }
