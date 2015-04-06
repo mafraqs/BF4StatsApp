@@ -72,6 +72,16 @@
                 android:value="com.example.marius.bf4statsapp.ArticlesActivity"/>
         </activity>
 
+        <!--Deals Activity-->
+        <activity
+            android:name=".DealsActivity"
+            android:label="@string/title_activity_deals"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.marius.bf4statsapp.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

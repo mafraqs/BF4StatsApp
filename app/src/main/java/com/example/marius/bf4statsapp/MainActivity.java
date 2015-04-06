@@ -366,11 +366,6 @@ public class MainActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         if (id == R.id.articles) {
             Intent intent = new Intent(this, ArticlesActivity.class);
             startActivity(intent);
@@ -381,8 +376,8 @@ public class MainActivity extends Activity {
             startActivity(intent);
         }
 
-        if (id == R.id.single) {
-            Intent intent = new Intent(this, SingleArticle.class);
+        if (id == R.id.deals) {
+            Intent intent = new Intent(this, DealsActivity.class);
             startActivity(intent);
         }
 

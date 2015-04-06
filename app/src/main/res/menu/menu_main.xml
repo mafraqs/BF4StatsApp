@@ -14,14 +14,15 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_compare"/>
+
     <item
         android:id="@+id/articles"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_articles"/>
+        android:title="News"/>
     <item
-        android:id="@+id/single"
+        android:id="@+id/deals"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="single"/>
+        android:title="Deals"/>
 </menu>

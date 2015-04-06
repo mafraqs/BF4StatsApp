@@ -28,22 +28,26 @@
     <string name="lblSPM">SPM</string>
     <string name="lblKPM">KPM</string>
     <string name="lblTime">TIME</string>
-    <string name="title_activity_comparison">ComparisonActivity</string>
+
 
     <string name="hello_world">Hello world!</string>
     <string name="btn_Go">Go!</string>
 
     //Card Titles
     <string name="stats">STATS</string>
-    <string name="title_activity_articles">ArticlesActivity</string>
-    <string name="title_activity_single_article">Date of Article</string>
+    <string name="title_activity_articles">Battlefield News</string>
+    <string name="title_activity_single_article">Artikel</string>
+    <string name="title_activity_new">Artikel</string>
+    <string name="title_activity_deals">Sonderangebote</string>
+    <string name="title_activity_comparison">Soldaten Vergleich</string>
+    <string name="News">News</string>
+    <string name="Deals">Deals</string>
     <string name="newsTitle">Hier der News Title</string>
     <string name="rssSource">www.battlefield-4.net</string>
     <string name="articleTitle">Artikel Titel</string>
 
 
-
-
     <string name="artitleText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
 
 </resources>

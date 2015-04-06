@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context=".SearchSoldiersActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DealsActivity">
 
     <item
         android:id="@+id/search"
@@ -19,11 +19,11 @@
         android:id="@+id/articles"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="News"/>
+        android:title="@string/News"/>
     <item
         android:id="@+id/deals"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Deals"/>
+        android:title="@string/Deals"/>
 </menu>
 
