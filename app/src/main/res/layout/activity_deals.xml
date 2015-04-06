@@ -12,35 +12,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Deals"
-                android:id="@+id/textView17"
-                android:textSize="30dp"
-                android:gravity="center_horizontal" />
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="30px" />
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView3"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/mydealz"/>
-
-        <Space
-            android:layout_width="fill_parent"
-            android:layout_height="30px" />
 
     </LinearLayout>
 
