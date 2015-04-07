@@ -3,6 +3,7 @@ package uihelper;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,6 +38,7 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
     public void onBindViewHolder(ArticlesViewHolder articlesViewHolder, int i) {
         ArticleInfo article1 = articles.get(i);
         articlesViewHolder.vArticleName.setText(article1.title);
+        articlesViewHolder.vGameName.setText(article1.gameTitle);
         articlesViewHolder.vArticleImage.setImageDrawable(mContext.getDrawable(article1.getImageResourceId(mContext)));
 
         articlesViewHolder.currentArticle = article1;
@@ -58,12 +60,14 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         public ArticleInfo currentArticle;
         private Context context;
 
+        protected TextView vGameName;
         protected TextView vArticleName;
         protected ImageView vArticleImage;
 
         public ArticlesViewHolder(View v) {
             super(v);
 
+            vGameName = (TextView) v.findViewById(R.id.rowArticleGame);
             vArticleName = (TextView) v.findViewById(R.id.rowArticleTitle);
             vArticleImage = (ImageView) v.findViewById(R.id.rowArticleImage);
 
@@ -77,6 +81,11 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
                     Log.e("ArticlesOnClickListener", "Article selected: " + currentArticle.title);
 
                     Intent intent = new Intent(v.getContext(), SingleArticle.class);
+                    Bundle b = new Bundle();
+                    b.putString("title", currentArticle.title);
+                    b.putString("txt", currentArticle.description);
+                    intent.putExtras(b);
+
                     v.getContext().startActivity(intent);
                 }
             });

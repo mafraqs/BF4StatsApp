@@ -45,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_tiny"
                 android:text="This will be the Title"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/primary_text"/>
 
         </LinearLayout>

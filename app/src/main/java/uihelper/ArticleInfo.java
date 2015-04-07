@@ -10,6 +10,7 @@ import com.example.marius.bf4statsapp.SingleArticle;
 public class ArticleInfo {
 
     public String title;
+    public String gameTitle;
     public String description;
     public String imageURL;
     public String pubDate;

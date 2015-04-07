@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class SingleArticle extends Activity {
@@ -13,6 +14,15 @@ public class SingleArticle extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_article);
+
+        Bundle b = getIntent().getExtras();
+        String title = b.getString("title");
+        String body = b.getString("txt");
+
+        TextView tV = (TextView) findViewById(R.id.singleArticleTitle);
+        tV.setText(title);
+        TextView tV2 = (TextView) findViewById(R.id.singleArticleText);
+        tV2.setText(body);
     }
 
 

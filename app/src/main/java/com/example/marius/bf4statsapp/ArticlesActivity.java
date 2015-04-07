@@ -52,7 +52,7 @@ public class ArticlesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articles);
 
-        rss_feed_data = (TextView) findViewById(R.id.RSSinhalt);
+        rss_feed_data = (TextView) findViewById(R.id.singleArticleText);
         txtRowArticle = (TextView) findViewById(R.id.rowArticleTitle);
         imgRowArticle = (ImageView) findViewById(R.id.rowArticleImage);
 
@@ -189,27 +189,51 @@ public class ArticlesActivity extends Activity {
 
                 String description;
                 String imgURL;
+                String title;
+
                 int myArrayLength = items.size();
                 String[] itemTitlesArray = new String[myArrayLength];
                 String[] itemDescriptionsArray = new String[myArrayLength];
                 String[] itemImgURLsArray = new String[myArrayLength];
                 String[] itemPubDateArray = new String[myArrayLength];
+                String[] itemGameArray = new String[myArrayLength];
 
                 int i = 0;
                 for (RssItem rssItem : items) {
                     Log.i("RSS Reader", i + " " + rssItem.getTitle());
-                    itemTitlesArray[i] = rssItem.getTitle();
-                    itemDescriptionsArray[i] = rssItem.getDescription();
                     itemPubDateArray[i] = rssItem.getPubDate().toLocaleString();
 
 
                     // Split imgURL from Description
                     // Put imgURL into Array
+                    // GET IMAGE URL
                     description = rssItem.getDescription();
                     String[] imgSplit1 = description.split("<img src=\"");
                     String[] imgSplit2 = imgSplit1[1].split("\" alt=");
                     imgURL = website + imgSplit2[0];
                     itemImgURLsArray[i] = imgURL;
+
+
+                    // GET THE TEXT
+                    description = rssItem.getDescription();
+                    String[] txtSplit1 = description.split("</div></div><br />");
+                    itemDescriptionsArray[i] = txtSplit1[1];
+
+                    // Split GameTitle and ArticleTitle
+                    title = rssItem.getTitle();
+                    String[] gtSplit = title.split(" - ");
+                    String fullATitle ="";  // Full Article Title
+                    for(int x =1; x < gtSplit.length; x++){
+                        if(x==1) {
+                            fullATitle = fullATitle + gtSplit[x];
+
+                        }else{
+                            fullATitle = fullATitle + " - " + gtSplit[x];
+                        }
+                    }
+
+                    itemGameArray[i] = gtSplit[0];
+                    itemTitlesArray[i] = fullATitle;
 
                     i++;
                 }
@@ -222,6 +246,7 @@ public class ArticlesActivity extends Activity {
 //                    ai.imageURL = itemImgURLsArray[x];
                     ai.imageURL = "r0";
                     ai.pubDate = itemPubDateArray[x];
+                    ai.gameTitle = itemGameArray[x];
 
                     asyResult.add(ai);
 
@@ -236,9 +261,8 @@ public class ArticlesActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "No RSS items found",
                         Toast.LENGTH_SHORT).show();
             }
+            Toast.makeText(mContext, "Fetching Done", Toast.LENGTH_LONG).show();
             pDialog.dismiss();
-            Toast.makeText(mContext, "FERTIG \n" + asyResult.get(1).title, Toast.LENGTH_LONG).show();
-//            Toast.makeText(mContext, "FERTIG", Toast.LENGTH_LONG).show();
             mAdapter = new ArticlesAdapter(asyResult, R.layout.card_layout_articles, mContext);
             mRecyclerView.setAdapter(mAdapter);
         }
