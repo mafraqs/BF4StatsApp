@@ -39,7 +39,8 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         ArticleInfo article1 = articles.get(i);
         articlesViewHolder.vArticleName.setText(article1.title);
         articlesViewHolder.vGameName.setText(article1.gameTitle);
-        articlesViewHolder.vArticleImage.setImageDrawable(mContext.getDrawable(article1.getImageResourceId(mContext)));
+        Log.d("ArticlesAdapter", "Image Updater:" + article1.imageURL);
+//        articlesViewHolder.vArticleImage.setImageDrawable(mContext.getDrawable(article1.getImageResourceId(mContext)));
 
         articlesViewHolder.currentArticle = article1;
     }
@@ -84,6 +85,8 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
                     Bundle b = new Bundle();
                     b.putString("title", currentArticle.title);
                     b.putString("txt", currentArticle.description);
+                    b.putString("date", currentArticle.pubDate);
+                    b.putString("gameTitle", currentArticle.gameTitle);
                     intent.putExtras(b);
 
                     v.getContext().startActivity(intent);

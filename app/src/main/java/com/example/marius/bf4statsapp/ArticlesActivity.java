@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -16,9 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -36,7 +41,6 @@ public class ArticlesActivity extends Activity {
     private RecyclerView mRecyclerView;
     private ArticlesAdapter mAdapter;
 
-
     TextView txtRowArticle;
     ImageView imgRowArticle;
     String imgURL;
@@ -44,6 +48,8 @@ public class ArticlesActivity extends Activity {
     TextView rss_feed_data;
     String website = "http://www.battlefield-4.net";
     String rssURL = website + "/rssfeed";
+    Bitmap bitmap;
+
     ProgressDialog pDialog;
 
     @Override
@@ -64,6 +70,11 @@ public class ArticlesActivity extends Activity {
         mRecyclerView.setAdapter(mAdapter);
 
         new GetRSSFeed(ArticlesActivity.this).execute();
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .build();
+
+
     }
 
 
@@ -126,6 +137,7 @@ public class ArticlesActivity extends Activity {
         public List<ArticleInfo> asyResult = new ArrayList<ArticleInfo>();
 
         private Context mContext;
+
         public GetRSSFeed(Context context) {
             mContext = context;
         }
@@ -157,6 +169,7 @@ public class ArticlesActivity extends Activity {
             }
             return rssItems;
         }
+
 
         // Gets called before the background work starts, you can use this
         // method to start a progressbar so the user knows something is
@@ -222,12 +235,12 @@ public class ArticlesActivity extends Activity {
                     // Split GameTitle and ArticleTitle
                     title = rssItem.getTitle();
                     String[] gtSplit = title.split(" - ");
-                    String fullATitle ="";  // Full Article Title
-                    for(int x =1; x < gtSplit.length; x++){
-                        if(x==1) {
+                    String fullATitle = "";  // Full Article Title
+                    for (int x = 1; x < gtSplit.length; x++) {
+                        if (x == 1) {
                             fullATitle = fullATitle + gtSplit[x];
 
-                        }else{
+                        } else {
                             fullATitle = fullATitle + " - " + gtSplit[x];
                         }
                     }
@@ -243,8 +256,8 @@ public class ArticlesActivity extends Activity {
                     ArticleInfo ai = new ArticleInfo();
                     ai.title = itemTitlesArray[x];
                     ai.description = itemDescriptionsArray[x];
-//                    ai.imageURL = itemImgURLsArray[x];
-                    ai.imageURL = "r0";
+                    ai.imageURL = itemImgURLsArray[x];
+//                    ai.imageURL = "r0";
                     ai.pubDate = itemPubDateArray[x];
                     ai.gameTitle = itemGameArray[x];
 
@@ -267,5 +280,4 @@ public class ArticlesActivity extends Activity {
             mRecyclerView.setAdapter(mAdapter);
         }
     }
-
 }

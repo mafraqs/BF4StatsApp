@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 
 public class SingleArticle extends Activity {
 
@@ -18,11 +20,15 @@ public class SingleArticle extends Activity {
         Bundle b = getIntent().getExtras();
         String title = b.getString("title");
         String body = b.getString("txt");
+        String date = b.getString("date");
+        String gameTitle = b.getString("gameTitle");
 
         TextView tV = (TextView) findViewById(R.id.singleArticleTitle);
         tV.setText(title);
         TextView tV2 = (TextView) findViewById(R.id.singleArticleText);
         tV2.setText(body);
+        TextView tV3 = (TextView) findViewById(R.id.singlePubDate);
+        tV3.setText(date + " - " + gameTitle);
     }
 
 
