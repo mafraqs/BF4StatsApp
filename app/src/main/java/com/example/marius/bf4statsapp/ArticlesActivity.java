@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -58,6 +59,9 @@ public class ArticlesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_articles);
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         rss_feed_data = (TextView) findViewById(R.id.singleArticleText);
         txtRowArticle = (TextView) findViewById(R.id.rowArticleTitle);
         imgRowArticle = (ImageView) findViewById(R.id.rowArticleImage);
@@ -70,10 +74,6 @@ public class ArticlesActivity extends Activity {
         mRecyclerView.setAdapter(mAdapter);
 
         new GetRSSFeed(ArticlesActivity.this).execute();
-
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .build();
-
 
     }
 

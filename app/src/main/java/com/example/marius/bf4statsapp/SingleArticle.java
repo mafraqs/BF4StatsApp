@@ -3,9 +3,13 @@ package com.example.marius.bf4statsapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.w3c.dom.Text;
 
@@ -17,11 +21,13 @@ public class SingleArticle extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_article);
 
+        // GET
         Bundle b = getIntent().getExtras();
         String title = b.getString("title");
         String body = b.getString("txt");
         String date = b.getString("date");
         String gameTitle = b.getString("gameTitle");
+        String imgURL = b.getString("imgUrl");
 
         TextView tV = (TextView) findViewById(R.id.singleArticleTitle);
         tV.setText(title);
@@ -29,6 +35,10 @@ public class SingleArticle extends Activity {
         tV2.setText(body);
         TextView tV3 = (TextView) findViewById(R.id.singlePubDate);
         tV3.setText(date + " - " + gameTitle);
+
+        Log.e("Failed to Load Image", "ImageURL: " + imgURL);
+        ImageView iV = (ImageView) findViewById(R.id.singleArticleImage);
+        ImageLoader.getInstance().displayImage(imgURL, iV);
     }
 
 

@@ -27,6 +27,10 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -85,6 +89,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //ImageLoader
+        // Create default options which will be used for every
+        //  displayImage(...) call if no options will be passed to this method
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
+                .defaultDisplayImageOptions(defaultOptions)
+                .build();
+        ImageLoader.getInstance().init(config); // Do it on Application start
+
+
         //mButton = (Button) findViewById(R.id.btn_Go);
 
 
@@ -110,7 +127,7 @@ public class MainActivity extends Activity {
         mCardView.setElevation(50);*/
 
 
-        spinner = (ProgressBar)findViewById(R.id.progressBarM);
+        spinner = (ProgressBar) findViewById(R.id.progressBarM);
         spinner.setVisibility(View.GONE);
 
 
@@ -120,8 +137,7 @@ public class MainActivity extends Activity {
             StringBuffer fileContent = new StringBuffer("");
             byte[] buffer = new byte[1024];
             int n = 0;
-            while ((n = fos.read(buffer)) != -1)
-            {
+            while ((n = fos.read(buffer)) != -1) {
                 fileContent.append(new String(buffer, 0, n));
             }
             fos.close();
@@ -159,7 +175,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void notificationCaller(){
+    public void notificationCaller() {
         Notification.Builder mBuilder =
                 new Notification.Builder(MainActivity.this)
                         .setSmallIcon(R.mipmap.ic_launcher)
@@ -242,7 +258,7 @@ public class MainActivity extends Activity {
                 //TimePlayed to Hour (round)
                 sPlayerScore = statObjOne.getString("score");
                 double toHour = Integer.parseInt(statObjOne.getString("timePlayed"));
-                toHour = Math.round(toHour/3600);
+                toHour = Math.round(toHour / 3600);
                 sTimePlayed = (int) Math.round(toHour);
 
                 statObjTwo = statObjOne.getJSONObject("rank");
@@ -259,36 +275,36 @@ public class MainActivity extends Activity {
                 statObjTwo = statObjOne.getJSONObject("extra");
                 // Round for 2 digits after the dot
                 sExtraKDR = statObjTwo.getString("kdr");
-                String [] sArrayKDR = sExtraKDR.split("\\.");
+                String[] sArrayKDR = sExtraKDR.split("\\.");
                 if (sArrayKDR.length == 2) {
-                    sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0,2);
+                    sExtraKDR = sArrayKDR[0] + "." + sArrayKDR[1].substring(0, 2);
                 } else {
                     sExtraKDR = sArrayKDR[0] + ".00";
                 }
 
                 // Round for 2 digits after the dot
                 sExtraWLR = statObjTwo.getString("wlr");
-                String [] sArrayWLR = sExtraWLR.split("\\.");
+                String[] sArrayWLR = sExtraWLR.split("\\.");
                 if (sArrayWLR.length == 2) {
-                    sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0,2);
+                    sExtraWLR = sArrayWLR[0] + "." + sArrayWLR[1].substring(0, 2);
                 } else {
                     sExtraWLR = sArrayWLR[0] + ".00";
                 }
 
                 // Round for 2 digits after the dot
                 sExtraSPM = statObjTwo.getString("spm");
-                String [] sArraySPM = sExtraSPM.split("\\.");
+                String[] sArraySPM = sExtraSPM.split("\\.");
                 if (sArraySPM.length == 2) {
-                    sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0,2);
+                    sExtraSPM = sArraySPM[0] + "." + sArraySPM[1].substring(0, 2);
                 } else {
                     sExtraSPM = sArraySPM[0] + ".00";
                 }
 
                 // Round for 2 digits after the dot
                 sExtraKPM = statObjTwo.getString("kpm");
-                 String [] sArrayKPM = sExtraKPM.split("\\.");
+                String[] sArrayKPM = sExtraKPM.split("\\.");
                 if (sArrayKPM.length == 2) {
-                    sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0,2);
+                    sExtraKPM = sArrayKPM[0] + "." + sArrayKPM[1].substring(0, 2);
                 } else {
                     sExtraKPM = sArrayKPM[0] + ".00";
                 }
@@ -313,7 +329,7 @@ public class MainActivity extends Activity {
                 mTV_Name.setText(sPlayerName);
                 mTV_Tag.setText(sPlayerTag);
                 mTV_Score.setText(sPlayerScore);
-                mTV_TimePlayed.setText(""+sTimePlayed+"H");
+                mTV_TimePlayed.setText("" + sTimePlayed + "H");
 //                mTV_RankNr.setText(sRankNr);
                 mTV_RankName.setText(sRankName);
                 mTV_Skill.setText(sStatsSkill);

@@ -15,8 +15,10 @@ import android.widget.Toast;
 
 import com.example.marius.bf4statsapp.R;
 import com.example.marius.bf4statsapp.SingleArticle;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
+
 
 /**
  * Created by Marius on 06.04.2015.
@@ -40,7 +42,14 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         articlesViewHolder.vArticleName.setText(article1.title);
         articlesViewHolder.vGameName.setText(article1.gameTitle);
         Log.d("ArticlesAdapter", "Image Updater:" + article1.imageURL);
-//        articlesViewHolder.vArticleImage.setImageDrawable(mContext.getDrawable(article1.getImageResourceId(mContext)));
+
+        // IMAGES
+        if (article1.imageURL == "r0") {
+            articlesViewHolder.vArticleImage.setImageDrawable(mContext.getDrawable(article1.getImageResourceId(mContext)));
+        } else {
+//            articlesViewHolder.vArticleImage.setImageBitmap(article1.getImageFromWeb());
+            ImageLoader.getInstance().displayImage(article1.imageURL, articlesViewHolder.vArticleImage);
+        }
 
         articlesViewHolder.currentArticle = article1;
     }
@@ -87,6 +96,7 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
                     b.putString("txt", currentArticle.description);
                     b.putString("date", currentArticle.pubDate);
                     b.putString("gameTitle", currentArticle.gameTitle);
+                    b.putString("imgUrl", currentArticle.imageURL);
                     intent.putExtras(b);
 
                     v.getContext().startActivity(intent);
