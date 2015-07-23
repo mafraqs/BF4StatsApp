@@ -59,8 +59,8 @@ public class CustomAdapter extends BaseAdapter {
         } else {
             text.setText("  item "+position);
         }
-
-        imageLoader.DisplayImage(data[position], image);
+        com.nostra13.universalimageloader.core.ImageLoader.getInstance().displayImage(data[position], image);
+//        imageLoader.DisplayImage(data[position], image);
         return vi;
     }
 }

@@ -1,35 +1,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/margin_small"
-                tools:context=".MainActivity">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tooäls="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_small">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:id="@+id/scrollView2" >
+        android:scrollbars="none">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
-                android:text="@string/greeting"/>
+                android:text="@string/greeting" />
 
             <View
                 android:id="@+id/divider1"
                 android:layout_width="fill_parent"
                 android:layout_height="0.3dp"
                 android:layout_below="@+id/textView"
-                android:background="@color/grey_black_1000"/>
+                android:background="@color/grey_black_1000" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cvPlayerInfo"
@@ -45,8 +44,7 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:orientation="vertical"
-                    android:padding="@dimen/margin_small"
-                    tools:context=".LinearLayout">
+                    android:padding="@dimen/margin_small">
 
 
                     <LinearLayout
@@ -58,7 +56,7 @@
                             android:id="@+id/rankImg"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/r0"/>
+                            android:src="@drawable/r0" />
 
                         <TextView
                             android:id="@+id/tvTag"
@@ -67,7 +65,7 @@
                             android:layout_gravity="center"
                             android:layout_weight="0.35"
                             android:text="[-]"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
                         <TextView
                             android:id="@+id/tvName"
@@ -76,7 +74,7 @@
                             android:layout_gravity="center"
                             android:layout_weight="0.75"
                             android:text="-"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
 
                     </LinearLayout>
 
@@ -88,14 +86,14 @@
 
                         <View
                             android:layout_width="50dp"
-                            android:layout_height="0dp"/>
+                            android:layout_height="0dp" />
 
                         <TextView
                             android:id="@+id/tvRank"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="-"/>
+                            android:text="-" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -133,7 +131,7 @@
                             android:layout_centerInParent="true"
                             android:layout_weight="1"
                             android:text="@string/stats"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -149,7 +147,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@string/lblScore"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
 
                         <TextView
                             android:id="@+id/tvScore"
@@ -159,7 +157,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerInParent="true"
                             android:text="-"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
                     </RelativeLayout>
                     <!--START First Row Stats-->
                     <LinearLayout
@@ -175,19 +173,19 @@
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="70dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="@string/lblTime"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -195,12 +193,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="@string/lblSPM"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -208,12 +206,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="@string/lblWLR"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -230,7 +228,7 @@
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvTime"
@@ -238,12 +236,12 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvSPM"
@@ -252,12 +250,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvWLR"
@@ -266,17 +264,16 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                         </LinearLayout>
                     </LinearLayout>
                     <!--END First Row Stats-->
-
 
 
                 </LinearLayout>
@@ -313,7 +310,7 @@
                             android:layout_centerInParent="true"
                             android:layout_weight="1"
                             android:text="@string/lblSkill"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -330,7 +327,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:text="@string/lblSkill"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
 
                         <TextView
                             android:id="@+id/tvSkill"
@@ -340,7 +337,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_centerInParent="true"
                             android:text="-"
-                            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
                     </RelativeLayout>
 
                     <!--START First Row Stats-->
@@ -357,19 +354,19 @@
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="70dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="@string/lblKills"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -377,12 +374,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="@string/lblDeaths"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -390,12 +387,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="@string/lblKDR"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -412,7 +409,7 @@
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvKills"
@@ -420,12 +417,12 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvDeaths"
@@ -434,12 +431,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvKDR"
@@ -448,12 +445,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -474,20 +471,20 @@
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="@string/lblHeadshots"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="70dp"
@@ -495,12 +492,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="@string/lblKPM"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:layout_width="110dp"
@@ -508,12 +505,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="@string/lblKillStreak"
-                                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
 
                         </LinearLayout>
@@ -531,7 +528,7 @@
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvHeadshots"
@@ -539,12 +536,12 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvKPM"
@@ -553,12 +550,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <TextView
                                 android:id="@+id/tvKillStreak"
@@ -567,12 +564,12 @@
                                 android:layout_gravity="start"
                                 android:gravity="center"
                                 android:text="-"
-                                android:textAppearance="?android:attr/textAppearanceLarge"/>
+                                android:textAppearance="?android:attr/textAppearanceLarge" />
 
                             <Space
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
 
                         </LinearLayout>
@@ -584,10 +581,10 @@
             </android.support.v7.widget.CardView>
 
             <ProgressBar
+                android:id="@+id/progressBarM"
                 style="?android:attr/progressBarStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/progressBarM"
                 android:layout_alignParentTop="true"
                 android:layout_toEndOf="@+id/textView" />
         </LinearLayout>

@@ -33,15 +33,4 @@ public class ArticleInfo {
             return -1;
         }
     }
-
-//    public Bitmap getImageFromWeb(){
-//        try {
-//            bitmap = BitmapFactory.decodeStream((InputStream)new URL(this.imageURL).getContent());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return bitmap;
-//    }
-
-
 }
